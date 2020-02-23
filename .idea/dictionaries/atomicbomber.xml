@@ -2,9 +2,15 @@
   <dictionary name="atomicbomber">
     <words>
       <w>deskripsi</w>
+      <w>diskon</w>
+      <w>harga</w>
+      <w>jumlah</w>
       <w>nama</w>
       <w>obat</w>
       <w>obats</w>
+      <w>pembelian</w>
+      <w>persentase</w>
+      <w>satuan</w>
     </words>
   </dictionary>
 </component>
