@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb6f9944-727a-45d8-964b-1170f91ba173" name="Default Changelist" comment="" />
+    <list default="true" id="fb6f9944-727a-45d8-964b-1170f91ba173" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +29,12 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -159,6 +168,7 @@
       <workItem from="1582431737212" duration="5544000" />
       <workItem from="1582444401892" duration="347000" />
       <workItem from="1582444754986" duration="5889000" />
+      <workItem from="1582457188225" duration="354000" />
     </task>
     <servers />
   </component>
@@ -170,10 +180,30 @@
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="733" y="282" width="424" height="482" key="FileChooserDialogImpl/0.0.1920.1053@0.0.1920.1053" timestamp="1582446897434" />
+    <state width="1320" height="152" key="GridCell.Tab.0.bottom" timestamp="1582457344288">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1320" height="152" key="GridCell.Tab.0.bottom/0.0.1366.742@0.0.1366.742" timestamp="1582457344288" />
+    <state width="1320" height="152" key="GridCell.Tab.0.center" timestamp="1582457344284">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1320" height="152" key="GridCell.Tab.0.center/0.0.1366.742@0.0.1366.742" timestamp="1582457344284" />
+    <state width="1320" height="152" key="GridCell.Tab.0.left" timestamp="1582457344282">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1320" height="152" key="GridCell.Tab.0.left/0.0.1366.742@0.0.1366.742" timestamp="1582457344282" />
+    <state width="1320" height="152" key="GridCell.Tab.0.right" timestamp="1582457344287">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1320" height="152" key="GridCell.Tab.0.right/0.0.1366.742@0.0.1366.742" timestamp="1582457344287" />
     <state x="827" y="460" width="235" height="128" key="Laravel.ExtractPartialViewDialog" timestamp="1582453447979">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="827" y="460" width="235" height="128" key="Laravel.ExtractPartialViewDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582453447979" />
+    <state x="382" y="94" width="593" height="553" key="MultipleFileMergeDialog" timestamp="1582457333856">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="382" y="94" width="593" height="553" key="MultipleFileMergeDialog/0.0.1366.742@0.0.1366.742" timestamp="1582457333856" />
     <state x="629" y="325" width="632" height="398" key="NewPhpClassDialog" timestamp="1582452716299">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
