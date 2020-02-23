@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.4",
         "fideloper/proxy": "^4.0",
+        "jenssegers/date": "^3.5",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",
         "mbezhanov/faker-provider-collection": "^1.2",

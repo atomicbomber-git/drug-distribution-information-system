@@ -61,6 +61,17 @@
                             Obat
                         </a>
                     </li>
+
+                    <li class="uk-margin-top">
+                        <a href="#"> TRANSAKSI </a>
+                    </li>
+
+                    <li class="{{ \Illuminate\Support\Facades\Route::is("invoice_pembelian.*") ? "uk-active" : "" }}  ">
+                        <a href="{{ route("invoice_pembelian.index") }}">
+                            <i class="fas fa-money-bill  "></i>
+                            Invoice Pembelian
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -21,11 +21,12 @@ class CreateItemInvoicePembeliansTable extends Migration
             $table->string('nama_obat');
             $table->decimal('jumlah_obat', 19, 4);
             $table->decimal('harga_satuan_obat', 19, 4);
-            $table->decimal('persentase_diskon', 19, 4);
+            $table->decimal('persentase_diskon_grosir', 19, 4);
             $table->timestamps();
 
             $table->foreign('obat_id')->references('id')->on('obat');
-            $table->foreign('invoice_id')->references('id')->on('invoice_pembelian');
+            $table->foreign('invoice_id')->references('id')->on('invoice_pembelian')
+                ->onDelete("CASCADE");
         });
     }
 

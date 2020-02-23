@@ -11,3 +11,9 @@ window.$ = window.jQuery = require('jquery');
 
 // Load datatables
 require('datatables.net-dt');
+
+window.Vue = require('vue');
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+const app = new Vue({
+    el: '#app',
+});

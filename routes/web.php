@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\InvoicePembelianController;
 use App\Http\Controllers\ObatController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource("obat", class_basename(ObatController::class));
+Route::resource("invoice_pembelian", class_basename(InvoicePembelianController::class));

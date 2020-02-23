@@ -3,14 +3,20 @@
     <words>
       <w>deskripsi</w>
       <w>diskon</w>
+      <w>grosir</w>
       <w>harga</w>
       <w>jumlah</w>
+      <w>manajemen</w>
       <w>nama</w>
       <w>obat</w>
       <w>obats</w>
+      <w>pajak</w>
       <w>pembelian</w>
+      <w>penerimaan</w>
       <w>persentase</w>
+      <w>perusahaan</w>
       <w>satuan</w>
+      <w>tanggal</w>
     </words>
   </dictionary>
 </component>

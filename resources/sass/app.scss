@@ -1,8 +1,8 @@
-// Import UIKit
-@import '~uikit/dist/css/uikit.css';
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Font Awesome 5
-@import '~@fortawesome/fontawesome-free/css/all.css';
+// Variables
+@import 'variables';
 
-// DataTables
-@import '~datatables.net-dt/css/jquery.dataTables.css';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
