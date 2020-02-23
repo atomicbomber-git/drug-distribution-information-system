@@ -2,29 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb6f9944-727a-45d8-964b-1170f91ba173" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/atomicbomber.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/atomicbomber.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/drug-distributor-information-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/drug-distributor-information-system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoicePembelianController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoicePembelianController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/InvoicePembelian.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/InvoicePembelian.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/InvoicePembelianFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/InvoicePembelianFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ItemInvoicePembelianFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ItemInvoicePembelianFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_23_200151_create_invoice_pembelians_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_23_200151_create_invoice_pembelians_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_23_200202_create_item_invoice_pembelians_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_23_200202_create_item_invoice_pembelians_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/InvoicePembelianSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/InvoicePembelianSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +135,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1YC1OtaUm25MF063lXe6RsBd5ii" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -177,12 +158,29 @@
       <recent name="$PROJECT_DIR$/resources/views/obat" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Script.Built-In Web Server">
+  <component name="RunManager" selected="Compound.Development">
+    <configuration default="true" type="CompoundRunConfigurationType">
+      <toRun name="Asset Compilation" type="js.build_tools.npm" />
+      <toRun name="Built-In Web Server" type="PhpLocalRunConfigurationType" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="Asset Compilation" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="watch" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Compound.Development" />
+      <item itemvalue="npm.Asset Compilation" />
       <item itemvalue="PHP Script.Built-In Web Server" />
       <item itemvalue="PHPUnit.phpunit.xml" />
     </list>
@@ -220,10 +218,11 @@
       <screen x="0" y="0" width="1366" height="742" />
     </state>
     <state x="402" y="133" width="553" height="475" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1366.742@0.0.1366.742" timestamp="1582459619453" />
-    <state x="141" y="29" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582457827585">
-      <screen x="0" y="0" width="1366" height="742" />
+    <state x="198" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582476856577">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="141" y="29" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.742@0.0.1366.742" timestamp="1582457827585" />
+    <state x="198" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582476856577" />
     <state x="491" y="90" width="376" height="561" key="#com.intellij.ide.util.MemberChooser" timestamp="1582457693103">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
@@ -232,31 +231,36 @@
       <screen x="0" y="0" width="1366" height="742" />
     </state>
     <state x="117" y="0" width="1123" height="741" key="CommitChangelistDialog2/0.0.1366.742@0.0.1366.742" timestamp="1582457909186" />
-    <state x="99" y="100" width="1168" height="543" key="DiffContextDialog" timestamp="1582468762870">
-      <screen x="0" y="0" width="1366" height="742" />
+    <state x="139" y="142" width="1642" height="771" key="DiffContextDialog" timestamp="1582476930946">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="99" y="100" width="1168" height="543" key="DiffContextDialog/0.0.1366.742@0.0.1366.742" timestamp="1582468762870" />
+    <state x="139" y="142" width="1642" height="771" key="DiffContextDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582476930946" />
     <state x="521" y="199" width="470" height="340" key="FileChooserDialogImpl" timestamp="1582457795118">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
     <state x="521" y="199" width="470" height="340" key="FileChooserDialogImpl/0.0.1366.742@0.0.1366.742" timestamp="1582457795118" />
     <state x="733" y="282" width="424" height="482" key="FileChooserDialogImpl/0.0.1920.1053@0.0.1920.1053" timestamp="1582446897434" />
-    <state width="1320" height="286" key="GridCell.Tab.0.bottom" timestamp="1582457917737">
-      <screen x="0" y="0" width="1366" height="742" />
+    <state width="1854" height="255" key="GridCell.Tab.0.bottom" timestamp="1582476882020">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1320" height="286" key="GridCell.Tab.0.bottom/0.0.1366.742@0.0.1366.742" timestamp="1582457917737" />
-    <state width="1320" height="286" key="GridCell.Tab.0.center" timestamp="1582457917732">
-      <screen x="0" y="0" width="1366" height="742" />
+    <state width="1854" height="255" key="GridCell.Tab.0.bottom/0.0.1920.1053@0.0.1920.1053" timestamp="1582476882020" />
+    <state width="1854" height="255" key="GridCell.Tab.0.center" timestamp="1582476882019">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1320" height="286" key="GridCell.Tab.0.center/0.0.1366.742@0.0.1366.742" timestamp="1582457917732" />
-    <state width="1320" height="286" key="GridCell.Tab.0.left" timestamp="1582457917730">
-      <screen x="0" y="0" width="1366" height="742" />
+    <state width="1854" height="255" key="GridCell.Tab.0.center/0.0.1920.1053@0.0.1920.1053" timestamp="1582476882019" />
+    <state width="1854" height="255" key="GridCell.Tab.0.left" timestamp="1582476882017">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1320" height="286" key="GridCell.Tab.0.left/0.0.1366.742@0.0.1366.742" timestamp="1582457917730" />
-    <state width="1320" height="286" key="GridCell.Tab.0.right" timestamp="1582457917734">
-      <screen x="0" y="0" width="1366" height="742" />
+    <state width="1854" height="255" key="GridCell.Tab.0.left/0.0.1920.1053@0.0.1920.1053" timestamp="1582476882017" />
+    <state width="1854" height="255" key="GridCell.Tab.0.right" timestamp="1582476882019">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1320" height="286" key="GridCell.Tab.0.right/0.0.1366.742@0.0.1366.742" timestamp="1582457917734" />
+    <state width="1854" height="255" key="GridCell.Tab.0.right/0.0.1920.1053@0.0.1920.1053" timestamp="1582476882019" />
     <state x="827" y="460" width="235" height="128" key="Laravel.ExtractPartialViewDialog" timestamp="1582453447979">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
@@ -288,10 +292,10 @@
     </state>
     <state x="437" y="169" key="run.anything.popup/0.0.1366.742@0.0.1366.742" timestamp="1582465907298" />
     <state x="614" y="240" key="run.anything.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582447735235" />
-    <state x="436" y="163" width="672" height="478" key="search.everywhere.popup" timestamp="1582468709653">
-      <screen x="0" y="0" width="1366" height="742" />
+    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1582476888979">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="436" y="163" width="672" height="478" key="search.everywhere.popup/0.0.1366.742@0.0.1366.742" timestamp="1582468709653" />
-    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582453543463" />
+    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582476888979" />
   </component>
 </project>
