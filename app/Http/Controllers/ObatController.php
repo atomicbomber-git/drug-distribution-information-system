@@ -5,8 +5,13 @@ namespace App\Http\Controllers;
 use App\Constants\MessageState;
 use App\Obat;
 use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
+use Illuminate\View\View;
 use Yajra\DataTables\Facades\DataTables;
 
 class ObatController extends Controller
@@ -14,9 +19,9 @@ class ObatController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\Http\Response|\Illuminate\View\View
+     * @return Factory|JsonResponse|Response|View
      */
-    public function index(Request $request, ResponseFactory $responseFactory)
+    public function index(Request $request)
     {
         if ($request->ajax()) {
             return DataTables::eloquent(
@@ -32,7 +37,7 @@ class ObatController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -42,8 +47,8 @@ class ObatController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -53,8 +58,8 @@ class ObatController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Obat  $obat
-     * @return \Illuminate\Http\Response
+     * @param Obat $obat
+     * @return Response
      */
     public function show(Obat $obat)
     {
@@ -64,8 +69,8 @@ class ObatController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Obat  $obat
-     * @return \Illuminate\Http\Response
+     * @param Obat $obat
+     * @return Response
      */
     public function edit(Obat $obat)
     {
@@ -75,9 +80,9 @@ class ObatController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Obat  $obat
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Obat $obat
+     * @return Response
      */
     public function update(Request $request, Obat $obat)
     {
@@ -87,8 +92,8 @@ class ObatController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Obat  $obat
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Obat $obat
+     * @return RedirectResponse
      */
     public function destroy(Obat $obat, Redirector $redirector)
     {

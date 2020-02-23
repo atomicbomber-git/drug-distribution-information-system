@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb6f9944-727a-45d8-964b-1170f91ba173" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Built_In_Web_Server.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ObatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ObatController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +38,7 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
@@ -139,8 +141,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../zakat-geographical-information-system" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/artisan" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
   </component>
@@ -149,11 +152,15 @@
       <recent name="$PROJECT_DIR$/resources/views/obat" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHP Script.Built-In Web Server">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="PHP Script.Built-In Web Server" />
+      <item itemvalue="PHPUnit.phpunit.xml" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -168,7 +175,7 @@
       <workItem from="1582431737212" duration="5544000" />
       <workItem from="1582444401892" duration="347000" />
       <workItem from="1582444754986" duration="5889000" />
-      <workItem from="1582457188225" duration="354000" />
+      <workItem from="1582457188225" duration="900000" />
     </task>
     <servers />
   </component>
@@ -176,26 +183,43 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="733" y="282" width="424" height="482" key="FileChooserDialogImpl" timestamp="1582446897434">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="287" y="0" width="783" height="741" key="#PHP" timestamp="1582457809550">
+      <screen x="0" y="0" width="1366" height="742" />
     </state>
+    <state x="287" y="0" width="783" height="741" key="#PHP/0.0.1366.742@0.0.1366.742" timestamp="1582457809550" />
+    <state x="141" y="29" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582457827585">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="141" y="29" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.742@0.0.1366.742" timestamp="1582457827585" />
+    <state x="491" y="90" width="376" height="561" key="#com.intellij.ide.util.MemberChooser" timestamp="1582457693103">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="491" y="90" width="376" height="561" key="#com.intellij.ide.util.MemberChooser/0.0.1366.742@0.0.1366.742" timestamp="1582457693103" />
+    <state x="117" y="0" width="1123" height="741" key="CommitChangelistDialog2" timestamp="1582457909186">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="117" y="0" width="1123" height="741" key="CommitChangelistDialog2/0.0.1366.742@0.0.1366.742" timestamp="1582457909186" />
+    <state x="521" y="199" width="470" height="340" key="FileChooserDialogImpl" timestamp="1582457795118">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="521" y="199" width="470" height="340" key="FileChooserDialogImpl/0.0.1366.742@0.0.1366.742" timestamp="1582457795118" />
     <state x="733" y="282" width="424" height="482" key="FileChooserDialogImpl/0.0.1920.1053@0.0.1920.1053" timestamp="1582446897434" />
-    <state width="1320" height="152" key="GridCell.Tab.0.bottom" timestamp="1582457344288">
+    <state width="1320" height="286" key="GridCell.Tab.0.bottom" timestamp="1582457917737">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
-    <state width="1320" height="152" key="GridCell.Tab.0.bottom/0.0.1366.742@0.0.1366.742" timestamp="1582457344288" />
-    <state width="1320" height="152" key="GridCell.Tab.0.center" timestamp="1582457344284">
+    <state width="1320" height="286" key="GridCell.Tab.0.bottom/0.0.1366.742@0.0.1366.742" timestamp="1582457917737" />
+    <state width="1320" height="286" key="GridCell.Tab.0.center" timestamp="1582457917732">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
-    <state width="1320" height="152" key="GridCell.Tab.0.center/0.0.1366.742@0.0.1366.742" timestamp="1582457344284" />
-    <state width="1320" height="152" key="GridCell.Tab.0.left" timestamp="1582457344282">
+    <state width="1320" height="286" key="GridCell.Tab.0.center/0.0.1366.742@0.0.1366.742" timestamp="1582457917732" />
+    <state width="1320" height="286" key="GridCell.Tab.0.left" timestamp="1582457917730">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
-    <state width="1320" height="152" key="GridCell.Tab.0.left/0.0.1366.742@0.0.1366.742" timestamp="1582457344282" />
-    <state width="1320" height="152" key="GridCell.Tab.0.right" timestamp="1582457344287">
+    <state width="1320" height="286" key="GridCell.Tab.0.left/0.0.1366.742@0.0.1366.742" timestamp="1582457917730" />
+    <state width="1320" height="286" key="GridCell.Tab.0.right" timestamp="1582457917734">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
-    <state width="1320" height="152" key="GridCell.Tab.0.right/0.0.1366.742@0.0.1366.742" timestamp="1582457344287" />
+    <state width="1320" height="286" key="GridCell.Tab.0.right/0.0.1366.742@0.0.1366.742" timestamp="1582457917734" />
     <state x="827" y="460" width="235" height="128" key="Laravel.ExtractPartialViewDialog" timestamp="1582453447979">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
@@ -220,13 +244,15 @@
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="619" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582431736237" />
-    <state x="614" y="240" key="run.anything.popup" timestamp="1582447735235">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="437" y="169" key="run.anything.popup" timestamp="1582457681908">
+      <screen x="0" y="0" width="1366" height="742" />
     </state>
+    <state x="437" y="169" key="run.anything.popup/0.0.1366.742@0.0.1366.742" timestamp="1582457681908" />
     <state x="614" y="240" key="run.anything.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582447735235" />
-    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1582453543463">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="436" y="163" width="672" height="478" key="search.everywhere.popup" timestamp="1582457923912">
+      <screen x="0" y="0" width="1366" height="742" />
     </state>
+    <state x="436" y="163" width="672" height="478" key="search.everywhere.popup/0.0.1366.742@0.0.1366.742" timestamp="1582457923912" />
     <state x="613" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582453543463" />
   </component>
 </project>

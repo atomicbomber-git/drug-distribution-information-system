@@ -15,12 +15,6 @@
     <script src="{{ asset('js/app.js') }}"
             defer></script>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch"
-          href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito"
-          rel="stylesheet">
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}"
           rel="stylesheet">
@@ -58,11 +52,14 @@
         <div class="uk-padding uk-height-viewport">
             <div>
                 <ul class="uk-nav uk-nav-default">
-                    <li class="uk-active">
+                    <li>
                         <a href="#"> MASTER DATA</a>
                     </li>
-                    <li>
-                        <a href="#"> Obat</a>
+                    <li class="{{ \Illuminate\Support\Facades\Route::is("obat.*") ? "uk-active" : "" }}  ">
+                        <a href="{{ route("obat.index") }}">
+                            <i class="fas fa-pills"></i>
+                            Obat
+                        </a>
                     </li>
                 </ul>
             </div>
