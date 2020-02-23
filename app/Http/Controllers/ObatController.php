@@ -41,18 +41,32 @@ class ObatController extends Controller
      */
     public function create()
     {
-        //
+        return view("obat.create");
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return RedirectResponse|Response
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            "nama" => "required|string|unique:obat",
+            "deskripsi" => "required|string",
+        ]);
+
+        Obat::create($data);
+
+        return redirect()
+            ->route("obat.index")
+            ->with("messages", [
+               [
+                   "state" => MessageState::STATE_SUCCESS,
+                   "content" => __("messages.create.success"),
+               ]
+            ]);
     }
 
     /**
@@ -74,7 +88,8 @@ class ObatController extends Controller
      */
     public function edit(Obat $obat)
     {
-        //
+        return response()
+            ->view("obat.edit", compact("obat"));
     }
 
     /**
@@ -82,11 +97,25 @@ class ObatController extends Controller
      *
      * @param Request $request
      * @param Obat $obat
-     * @return Response
+     * @return RedirectResponse
      */
     public function update(Request $request, Obat $obat)
     {
-        //
+        $data = $request->validate([
+            "nama" => "required|string|unique:obat,nama,$obat->id",
+            "deskripsi" => "required|string",
+        ]);
+
+        $obat->update($data);
+
+        return redirect()
+            ->route("obat.edit", $obat)
+            ->with("messages", [
+                [
+                    "state" => MessageState::STATE_SUCCESS,
+                    "content" => __("messages.update.success")
+                ]
+            ]);
     }
 
     /**

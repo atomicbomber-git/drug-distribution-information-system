@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb6f9944-727a-45d8-964b-1170f91ba173" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Built_In_Web_Server.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/obat/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/atomicbomber.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/atomicbomber.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ObatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ObatController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Obat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Obat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/obat/_index_controls.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/obat/_index_controls.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +136,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1YC1OtaUm25MF063lXe6RsBd5ii" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -143,7 +148,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/artisan" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/obat" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
   </component>
@@ -175,7 +180,7 @@
       <workItem from="1582431737212" duration="5544000" />
       <workItem from="1582444401892" duration="347000" />
       <workItem from="1582444754986" duration="5889000" />
-      <workItem from="1582457188225" duration="900000" />
+      <workItem from="1582457188225" duration="3513000" />
     </task>
     <servers />
   </component>
@@ -183,10 +188,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="64" y="0" width="1230" height="741" key="#Live_Templates" timestamp="1582459688197">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="64" y="0" width="1230" height="741" key="#Live_Templates/0.0.1366.742@0.0.1366.742" timestamp="1582459688197" />
     <state x="287" y="0" width="783" height="741" key="#PHP" timestamp="1582457809550">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
     <state x="287" y="0" width="783" height="741" key="#PHP/0.0.1366.742@0.0.1366.742" timestamp="1582457809550" />
+    <state x="402" y="133" width="553" height="475" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1582459619453">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="402" y="133" width="553" height="475" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1366.742@0.0.1366.742" timestamp="1582459619453" />
     <state x="141" y="29" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582457827585">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
@@ -236,23 +249,24 @@
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="454" y="159" key="SettingsEditor/0.0.1920.1053@0.0.1920.1053" timestamp="1582446485927" />
-    <state x="679" y="260" width="540" height="540" key="StructurePopup" timestamp="1582452497763">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="483" y="183" width="810" height="381" key="StructurePopup" timestamp="1582462623045">
+      <screen x="0" y="0" width="1366" height="742" />
     </state>
+    <state x="483" y="183" width="810" height="381" key="StructurePopup/0.0.1366.742@0.0.1366.742" timestamp="1582462623045" />
     <state x="679" y="260" width="540" height="540" key="StructurePopup/0.0.1920.1053@0.0.1920.1053" timestamp="1582452497763" />
     <state x="619" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1582431736237">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="619" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582431736237" />
-    <state x="437" y="169" key="run.anything.popup" timestamp="1582457681908">
+    <state x="437" y="169" key="run.anything.popup" timestamp="1582458205769">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
-    <state x="437" y="169" key="run.anything.popup/0.0.1366.742@0.0.1366.742" timestamp="1582457681908" />
+    <state x="437" y="169" key="run.anything.popup/0.0.1366.742@0.0.1366.742" timestamp="1582458205769" />
     <state x="614" y="240" key="run.anything.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582447735235" />
-    <state x="436" y="163" width="672" height="478" key="search.everywhere.popup" timestamp="1582457923912">
+    <state x="436" y="163" width="672" height="478" key="search.everywhere.popup" timestamp="1582462619590">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
-    <state x="436" y="163" width="672" height="478" key="search.everywhere.popup/0.0.1366.742@0.0.1366.742" timestamp="1582457923912" />
+    <state x="436" y="163" width="672" height="478" key="search.everywhere.popup/0.0.1366.742@0.0.1366.742" timestamp="1582462619590" />
     <state x="613" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582453543463" />
   </component>
 </project>
