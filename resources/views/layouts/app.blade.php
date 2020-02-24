@@ -59,13 +59,20 @@
                     </li>
 
                     <li class="uk-margin-top">
-                        <a href="#"> TRANSAKSI</a>
+                        <a href="#"> OPERASIONAL </a>
                     </li>
 
                     <li class="{{ \Illuminate\Support\Facades\Route::is("invoice_penjualan.*") ? "uk-active" : "" }}  ">
                         <a href="{{ route("invoice_penjualan.index") }}">
-                            <i class="fas fa-money-bill  "></i>
+                            <i class="fas fa-money-bill"></i>
                             Invoice Pembelian
+                        </a>
+                    </li>
+
+                    <li class="{{ \Illuminate\Support\Facades\Route::is("penerimaan.*") ? "uk-active" : "" }}  ">
+                        <a href="{{ route("penerimaan.index") }}">
+                            <i class="fas fa-truck-loading"></i>
+                            Penerimaan
                         </a>
                     </li>
                 </ul>

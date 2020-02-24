@@ -4,7 +4,16 @@
     <list default="true" id="fb6f9944-727a-45d8-964b-1170f91ba173" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/atomicbomber.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/atomicbomber.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoicePembelianController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoicePenjualanController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoicePenjualanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoicePenjualanController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ItemInvoicePembelianController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_23_062119_create_obats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_23_062119_create_obats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_23_200151_create_invoice_penjualan_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_23_200151_create_invoice_penjualan_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_23_200202_create_item_invoice_penjualan_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_23_200202_create_item_invoice_penjualan_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/invoice_pembelian/_index_controls.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoice_penjualan/_index_controls.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/invoice_pembelian/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoice_penjualan/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/invoice_pembelian/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoice_penjualan/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,21 +59,14 @@
         <item name="ddis@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="ddis: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="invoice_pembelian: table" type="dbc44a63:MariaImplModel$Table" />
+        <item name="item_penerimaan: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="ddis@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="ddis: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="item_invoice_pembelian: table" type="dbc44a63:MariaImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="ddis@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ddis: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="obat: table" type="dbc44a63:MariaImplModel$Table" />
+        <item name="penerimaan: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -193,12 +195,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../property_developer_information_system" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/penerimaan" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/penerimaan" />
       <recent name="$PROJECT_DIR$/resources/views/invoice_pembelian" />
       <recent name="$PROJECT_DIR$/resources/views/obat" />
     </key>
@@ -246,6 +249,8 @@
       <workItem from="1582457188225" duration="7983000" />
       <workItem from="1582480953276" duration="1925000" />
       <workItem from="1582506176420" duration="2418000" />
+      <workItem from="1582546804945" duration="2872000" />
+      <workItem from="1582553038104" duration="2010000" />
     </task>
     <servers />
   </component>
@@ -275,10 +280,14 @@
       <screen x="0" y="0" width="1366" height="742" />
     </state>
     <state x="491" y="90" width="376" height="561" key="#com.intellij.ide.util.MemberChooser/0.0.1366.742@0.0.1366.742" timestamp="1582457693103" />
-    <state x="553" y="0" width="783" height="1051" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582546874540">
+    <state x="553" y="0" width="783" height="1051" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582547128444">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
-    <state x="553" y="0" width="783" height="1051" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582546874540" />
+    <state x="553" y="0" width="783" height="1051" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582547128444" />
+    <state x="683" y="283" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582554612750">
+      <screen x="0" y="0" width="1920" height="1053" />
+    </state>
+    <state x="683" y="283" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582554612750" />
     <state x="117" y="0" width="1123" height="741" key="CommitChangelistDialog2" timestamp="1582457909186">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
@@ -288,11 +297,11 @@
     </state>
     <state x="99" y="100" width="1168" height="543" key="DiffContextDialog/0.0.1366.742@0.0.1366.742" timestamp="1582468762870" />
     <state x="139" y="142" width="1642" height="771" key="DiffContextDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582476930946" />
-    <state x="733" y="282" width="470" height="340" key="FileChooserDialogImpl" timestamp="1582481897311">
+    <state x="733" y="282" width="470" height="340" key="FileChooserDialogImpl" timestamp="1582553103143">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="521" y="199" width="470" height="340" key="FileChooserDialogImpl/0.0.1366.742@0.0.1366.742" timestamp="1582457795118" />
-    <state x="733" y="282" width="424" height="482" key="FileChooserDialogImpl/0.0.1920.1053@0.0.1920.1053" timestamp="1582481897311" />
+    <state x="733" y="282" width="424" height="482" key="FileChooserDialogImpl/0.0.1920.1053@0.0.1920.1053" timestamp="1582553103143" />
     <state width="1320" height="286" key="GridCell.Tab.0.bottom" timestamp="1582542234668">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
@@ -321,10 +330,10 @@
       <screen x="0" y="0" width="1366" height="742" />
     </state>
     <state x="382" y="94" width="593" height="553" key="MultipleFileMergeDialog/0.0.1366.742@0.0.1366.742" timestamp="1582457333856" />
-    <state x="629" y="325" width="632" height="398" key="NewPhpClassDialog" timestamp="1582452716299">
+    <state x="629" y="325" width="953" height="424" key="NewPhpClassDialog" timestamp="1582554463633">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
-    <state x="629" y="325" width="632" height="398" key="NewPhpClassDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582452716299" />
+    <state x="629" y="325" width="953" height="424" key="NewPhpClassDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582554463633" />
     <state x="323" y="12" key="SettingsEditor" timestamp="1582466876205">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
@@ -335,23 +344,23 @@
     </state>
     <state x="483" y="183" width="810" height="381" key="StructurePopup/0.0.1366.742@0.0.1366.742" timestamp="1582527514731" />
     <state x="679" y="260" width="540" height="540" key="StructurePopup/0.0.1920.1053@0.0.1920.1053" timestamp="1582452497763" />
-    <state x="619" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1582546856661">
+    <state x="619" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1582553038102">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
-    <state x="619" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582546856661" />
-    <state x="564" y="204" width="944" height="720" key="find.popup" timestamp="1582546944118">
+    <state x="619" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582553038102" />
+    <state x="564" y="204" width="944" height="720" key="find.popup" timestamp="1582549391924">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
-    <state x="564" y="204" width="944" height="720" key="find.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582546944118" />
-    <state x="614" y="240" key="run.anything.popup" timestamp="1582546756598">
+    <state x="564" y="204" width="944" height="720" key="find.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582549391924" />
+    <state x="614" y="240" key="run.anything.popup" timestamp="1582554809653">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="437" y="169" key="run.anything.popup/0.0.1366.742@0.0.1366.742" timestamp="1582527360542" />
-    <state x="614" y="240" key="run.anything.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582546756598" />
-    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1582546779845">
+    <state x="614" y="240" key="run.anything.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582554809653" />
+    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1582555069044">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="436" y="163" width="672" height="478" key="search.everywhere.popup/0.0.1366.742@0.0.1366.742" timestamp="1582468709653" />
-    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582546779845" />
+    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582555069044" />
   </component>
 </project>

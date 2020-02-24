@@ -4,34 +4,45 @@ namespace App\Http\Controllers;
 
 use App\Constants\MessageState;
 use App\GlobalHelpers\Formatter;
-use App\Http\Resources\InvoicePembelianResource;
-use App\InvoicePenjualan;
-use App\Obat;
+use App\Penerimaan;
 use Illuminate\Http\Request;
-use Jenssegers\Date\Date;
 use Yajra\DataTables\Facades\DataTables;
 
-class InvoicePenjualanController extends Controller
+class PenerimaanController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
     public function index(Request $request)
     {
+
+
         if ($request->ajax()) {
-            return DataTables::eloquent(InvoicePenjualan::query())
+            return DataTables::eloquent(
+                Penerimaan::query()
+                    ->select([
+                        "id",
+                        "nama_supplier",
+                        "waktu_penerimaan",
+                    ])
+                )
                 ->addIndexColumn()
-                ->editColumn("waktu_penerimaan", fn($invoice_penjualan)
-                    => Formatter::fancyDate($invoice_penjualan->waktu_penerimaan))
-                ->addColumn("controls", fn($invoice_penjualan) =>
-                    view("invoice_penjualan._index_controls", compact("invoice_penjualan"))
+                ->editColumn(
+                    "waktu_penerimaan",
+                    fn ($penerimaan) => Formatter::fancyDate($penerimaan->waktu_penerimaan)
+                )
+                ->addColumn("controls",
+                    fn ($penerimaan) => view(
+                        "penerimaan._index_controls",
+                        compact("penerimaan")
+                    )
                 )
                 ->toJson();
         }
 
-        return response()->view("invoice_penjualan.index");
+        return view("penerimaan.index");
     }
 
     /**
@@ -41,19 +52,13 @@ class InvoicePenjualanController extends Controller
      */
     public function create()
     {
-        $obats = Obat::query()
-            ->orderBy("nama")
-            ->get();
-
-        return response()->view("invoice_penjualan.create", compact(
-            "obats"
-        ));
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -64,10 +69,10 @@ class InvoicePenjualanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\InvoicePenjualan $invoicePembelian
+     * @param  \App\Penerimaan  $penerimaan
      * @return \Illuminate\Http\Response
      */
-    public function show(InvoicePenjualan $invoicePembelian)
+    public function show(Penerimaan $penerimaan)
     {
         //
     }
@@ -75,10 +80,10 @@ class InvoicePenjualanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\InvoicePenjualan $invoicePembelian
+     * @param  \App\Penerimaan  $penerimaan
      * @return \Illuminate\Http\Response
      */
-    public function edit(InvoicePenjualan $invoicePembelian)
+    public function edit(Penerimaan $penerimaan)
     {
         //
     }
@@ -86,11 +91,11 @@ class InvoicePenjualanController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\InvoicePenjualan $invoicePembelian
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Penerimaan  $penerimaan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, InvoicePenjualan $invoicePembelian)
+    public function update(Request $request, Penerimaan $penerimaan)
     {
         //
     }
@@ -98,15 +103,15 @@ class InvoicePenjualanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param InvoicePenjualan $invoice_penjualan
+     * @param  \App\Penerimaan  $penerimaan
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function destroy(InvoicePenjualan $invoice_penjualan)
+    public function destroy(Penerimaan $penerimaan)
     {
-        $invoice_penjualan->forceDelete();
+        $penerimaan->forceDelete();
 
         return redirect()
-            ->route("invoice_penjualan.index", $invoice_penjualan)
+            ->route("penerimaan.index", $penerimaan)
             ->with("messages", [
                 [
                     "state" => MessageState::STATE_SUCCESS,

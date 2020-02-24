@@ -13,6 +13,7 @@
 
 use App\Http\Controllers\InvoicePenjualanController;
 use App\Http\Controllers\ObatController;
+use App\Http\Controllers\PenerimaanController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource("obat", class_basename(ObatController::class));
 Route::resource("invoice_penjualan", class_basename(InvoicePenjualanController::class));
+Route::resource("penerimaan", class_basename(PenerimaanController::class));

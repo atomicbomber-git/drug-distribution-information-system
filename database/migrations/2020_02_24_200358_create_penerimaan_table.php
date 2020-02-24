@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInvoicePenjualanTable extends Migration
+class CreatePenerimaanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateInvoicePenjualanTable extends Migration
      */
     public function up()
     {
-        Schema::create('invoice_penjualan', function (Blueprint $table) {
+        Schema::create('penerimaan', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama_perusahaan');
-            $table->dateTime('waktu_penerimaan');
-            $table->decimal('persentase_diskon_cash', 19, 4);
-            $table->decimal('persentase_pajak', 19, 4);
+            $table->string("nama_supplier");
+            $table->dateTime("waktu_penerimaan");
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateInvoicePenjualanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoice_penjualan');
+        Schema::dropIfExists('penerimaan');
     }
 }
