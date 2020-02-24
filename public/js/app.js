@@ -1909,6 +1909,8 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _InvoicePembelianLine__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InvoicePembelianLine */ "./resources/js/components/InvoicePembelianLine.vue");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -1984,6 +1986,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     InvoicePembelianLine: _InvoicePembelianLine__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -2004,7 +2007,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return _objectSpread({}, obat, {
           jumlah_obat: 0,
           harga_satuan_obat: 0,
-          persentase_diskon_grosir: 0,
+          diskon_grosir: 0,
           picked: false
         });
       })
@@ -2025,10 +2028,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     },
     d_picked_obats: function d_picked_obats() {
-      return this.d_obats.filter(function (_ref2) {
+      return Object(lodash__WEBPACK_IMPORTED_MODULE_1__["keyBy"])(this.d_obats.filter(function (_ref2) {
         var picked = _ref2.picked;
         return picked;
-      });
+      }), "id");
     }
   },
   methods: {
@@ -2084,16 +2087,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'InvoicePembelianLine',
   props: {
     value: {},
     error_data: {},
     index: {}
+  },
+  watch: {
+    "value.diskon_grosir": function valueDiskon_grosir(new_diskon_grosir) {
+      if (new_diskon_grosir > 15) {
+        this.value.diskon_grosir = 15;
+      }
+    }
+  },
+  computed: {
+    sub_total: function sub_total() {
+      return this.value.jumlah_obat + this.value.harga_satuan_obat + this.value.diskon_grosir;
+    }
   }
 });
 
@@ -58102,8 +58113,173 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
-var staticRenderFns = []
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "form",
+    {
+      on: {
+        submit: function($event) {
+          $event.preventDefault()
+          return _vm.onFormSubmit($event)
+        }
+      }
+    },
+    [
+      _c("div", { staticClass: "uk-margin" }, [
+        _c(
+          "label",
+          { staticClass: "uk-form-label", attrs: { for: "nama_perusahaan" } },
+          [_vm._v(" Nama Perusahaan\n        ")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.nama_perusahaan,
+              expression: "nama_perusahaan"
+            }
+          ],
+          staticClass: "uk-input",
+          class: {
+            "uk-form-danger": !!this.get(
+              _vm.error_data,
+              "errors.nama_perusahaan[0]",
+              false
+            )
+          },
+          attrs: {
+            id: "nama_perusahaan",
+            placeholder: "Nama Perusahaan",
+            type: "text"
+          },
+          domProps: { value: _vm.nama_perusahaan },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.nama_perusahaan = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "uk-text-danger uk-text-small" }, [
+          _vm._v(
+            "\n            " +
+              _vm._s(
+                this.get(_vm.error_data, "errors.nama_perusahaan[0]", "")
+              ) +
+              "\n        "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "uk-margin" },
+        [
+          _c("label", { staticClass: "uk-form-label" }, [
+            _vm._v(" Obat\n        ")
+          ]),
+          _vm._v(" "),
+          _c("Multiselect", {
+            attrs: {
+              id: "obat",
+              options: this.d_unpicked_obats,
+              "custom-label": function(ref) {
+                var nama = ref.nama
+
+                return nama
+              }
+            },
+            model: {
+              value: _vm.d_obat,
+              callback: function($$v) {
+                _vm.d_obat = $$v
+              },
+              expression: "d_obat"
+            }
+          }),
+          _vm._v(" "),
+          _c("span", { staticClass: "uk-text-danger uk-text-small" }, [
+            _vm._v(
+              "\n            " +
+                _vm._s(this.get(_vm.error_data, "errors.obat[0]", "")) +
+                "\n        "
+            )
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "uk-margin uk-text-small" }, [
+        _c(
+          "table",
+          {
+            staticClass:
+              "uk-table uk-table-small uk-table-striped uk-table-middle"
+          },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              [
+                _vm._l(Object.keys(this.d_picked_obats), function(
+                  d_picked_obat_id,
+                  index
+                ) {
+                  return [
+                    _c("InvoicePembelianLine", {
+                      key: d_picked_obat_id,
+                      attrs: { error_data: _vm.error_data, index: index },
+                      model: {
+                        value: _vm.d_picked_obats[d_picked_obat_id],
+                        callback: function($$v) {
+                          _vm.$set(_vm.d_picked_obats, d_picked_obat_id, $$v)
+                        },
+                        expression: "d_picked_obats[d_picked_obat_id]"
+                      }
+                    })
+                  ]
+                })
+              ],
+              2
+            )
+          ]
+        )
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v(" #")]),
+        _vm._v(" "),
+        _c("th", [_vm._v(" Nama")]),
+        _vm._v(" "),
+        _c("th", [_vm._v(" Jumlah")]),
+        _vm._v(" "),
+        _c("th", [_vm._v(" Harga Satuan (Rp.)")]),
+        _vm._v(" "),
+        _c("th", [_vm._v(" Diskon Grosir (%)")]),
+        _vm._v(" "),
+        _c("th", [_vm._v(" Sub Total")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
 
 
 
@@ -58134,9 +58310,10 @@ var render = function() {
         directives: [
           {
             name: "model",
-            rawName: "v-model",
+            rawName: "v-model.number",
             value: _vm.value.jumlah_obat,
-            expression: "value.jumlah_obat"
+            expression: "value.jumlah_obat",
+            modifiers: { number: true }
           }
         ],
         staticClass: "uk-input",
@@ -58150,7 +58327,10 @@ var render = function() {
             if ($event.target.composing) {
               return
             }
-            _vm.$set(_vm.value, "jumlah_obat", $event.target.value)
+            _vm.$set(_vm.value, "jumlah_obat", _vm._n($event.target.value))
+          },
+          blur: function($event) {
+            return _vm.$forceUpdate()
           }
         }
       })
@@ -58161,9 +58341,10 @@ var render = function() {
         directives: [
           {
             name: "model",
-            rawName: "v-model",
-            value: _vm.value.harga_satuan,
-            expression: "value.harga_satuan"
+            rawName: "v-model.number",
+            value: _vm.value.harga_satuan_obat,
+            expression: "value.harga_satuan_obat",
+            modifiers: { number: true }
           }
         ],
         staticClass: "uk-input",
@@ -58175,13 +58356,20 @@ var render = function() {
           )
         },
         attrs: { placeholder: "Harga Satuan", type: "number" },
-        domProps: { value: _vm.value.harga_satuan },
+        domProps: { value: _vm.value.harga_satuan_obat },
         on: {
           input: function($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.$set(_vm.value, "harga_satuan", $event.target.value)
+            _vm.$set(
+              _vm.value,
+              "harga_satuan_obat",
+              _vm._n($event.target.value)
+            )
+          },
+          blur: function($event) {
+            return _vm.$forceUpdate()
           }
         }
       })
@@ -58192,9 +58380,10 @@ var render = function() {
         directives: [
           {
             name: "model",
-            rawName: "v-model",
+            rawName: "v-model.number",
             value: _vm.value.diskon_grosir,
-            expression: "value.diskon_grosir"
+            expression: "value.diskon_grosir",
+            modifiers: { number: true }
           }
         ],
         staticClass: "uk-input",
@@ -58205,20 +58394,23 @@ var render = function() {
             false
           )
         },
-        attrs: { placeholder: "Diskon Grosir", type: "number" },
+        attrs: { max: "15", placeholder: "Diskon Grosir", type: "number" },
         domProps: { value: _vm.value.diskon_grosir },
         on: {
           input: function($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.$set(_vm.value, "diskon_grosir", $event.target.value)
+            _vm.$set(_vm.value, "diskon_grosir", _vm._n($event.target.value))
+          },
+          blur: function($event) {
+            return _vm.$forceUpdate()
           }
         }
       })
     ]),
     _vm._v(" "),
-    _c("td")
+    _c("td", [_vm._v("\n        " + _vm._s(_vm.sub_total) + "\n    ")])
   ])
 }
 var staticRenderFns = []
@@ -70621,8 +70813,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/atomicbomber/projects/drug-distributor-information-system/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/atomicbomber/projects/drug-distributor-information-system/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/atomicbomber/experiments/drug-distribution-information-system/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/atomicbomber/experiments/drug-distribution-information-system/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

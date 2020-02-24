@@ -2,22 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb6f9944-727a-45d8-964b-1170f91ba173" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/atomicbomber.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/atomicbomber.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoicePembelianController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoicePembelianController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/InvoicePembelianFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/InvoicePembelianFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_23_200151_create_invoice_pembelians_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_23_200151_create_invoice_pembelians_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoice_pembelian/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoice_pembelian/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/InvoicePembelianCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/InvoicePembelianCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/InvoicePembelianLine.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/InvoicePembelianLine.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,25 +284,25 @@
     </state>
     <state x="521" y="199" width="470" height="340" key="FileChooserDialogImpl/0.0.1366.742@0.0.1366.742" timestamp="1582457795118" />
     <state x="733" y="282" width="424" height="482" key="FileChooserDialogImpl/0.0.1920.1053@0.0.1920.1053" timestamp="1582481897311" />
-    <state width="1846" height="249" key="GridCell.Tab.0.bottom" timestamp="1582506444358">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state width="1320" height="286" key="GridCell.Tab.0.bottom" timestamp="1582542234668">
+      <screen x="0" y="0" width="1366" height="742" />
     </state>
-    <state width="1320" height="286" key="GridCell.Tab.0.bottom/0.0.1366.742@0.0.1366.742" timestamp="1582457917737" />
+    <state width="1320" height="286" key="GridCell.Tab.0.bottom/0.0.1366.742@0.0.1366.742" timestamp="1582542234668" />
     <state width="1846" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1053@0.0.1920.1053" timestamp="1582506444358" />
-    <state width="1846" height="249" key="GridCell.Tab.0.center" timestamp="1582506444356">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state width="1320" height="286" key="GridCell.Tab.0.center" timestamp="1582542234667">
+      <screen x="0" y="0" width="1366" height="742" />
     </state>
-    <state width="1320" height="286" key="GridCell.Tab.0.center/0.0.1366.742@0.0.1366.742" timestamp="1582457917732" />
+    <state width="1320" height="286" key="GridCell.Tab.0.center/0.0.1366.742@0.0.1366.742" timestamp="1582542234667" />
     <state width="1846" height="249" key="GridCell.Tab.0.center/0.0.1920.1053@0.0.1920.1053" timestamp="1582506444356" />
-    <state width="1846" height="249" key="GridCell.Tab.0.left" timestamp="1582506444355">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state width="1320" height="286" key="GridCell.Tab.0.left" timestamp="1582542234667">
+      <screen x="0" y="0" width="1366" height="742" />
     </state>
-    <state width="1320" height="286" key="GridCell.Tab.0.left/0.0.1366.742@0.0.1366.742" timestamp="1582457917730" />
+    <state width="1320" height="286" key="GridCell.Tab.0.left/0.0.1366.742@0.0.1366.742" timestamp="1582542234667" />
     <state width="1846" height="249" key="GridCell.Tab.0.left/0.0.1920.1053@0.0.1920.1053" timestamp="1582506444355" />
-    <state width="1846" height="249" key="GridCell.Tab.0.right" timestamp="1582506444357">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state width="1320" height="286" key="GridCell.Tab.0.right" timestamp="1582542234667">
+      <screen x="0" y="0" width="1366" height="742" />
     </state>
-    <state width="1320" height="286" key="GridCell.Tab.0.right/0.0.1366.742@0.0.1366.742" timestamp="1582457917734" />
+    <state width="1320" height="286" key="GridCell.Tab.0.right/0.0.1366.742@0.0.1366.742" timestamp="1582542234667" />
     <state width="1846" height="249" key="GridCell.Tab.0.right/0.0.1920.1053@0.0.1920.1053" timestamp="1582506444357" />
     <state x="827" y="460" width="235" height="128" key="Laravel.ExtractPartialViewDialog" timestamp="1582453447979">
       <screen x="0" y="0" width="1920" height="1053" />
@@ -331,19 +321,19 @@
     </state>
     <state x="323" y="12" key="SettingsEditor/0.0.1366.742@0.0.1366.742" timestamp="1582466876205" />
     <state x="454" y="159" key="SettingsEditor/0.0.1920.1053@0.0.1920.1053" timestamp="1582446485927" />
-    <state x="483" y="183" width="810" height="381" key="StructurePopup" timestamp="1582462623045">
+    <state x="483" y="183" width="810" height="381" key="StructurePopup" timestamp="1582527514731">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
-    <state x="483" y="183" width="810" height="381" key="StructurePopup/0.0.1366.742@0.0.1366.742" timestamp="1582462623045" />
+    <state x="483" y="183" width="810" height="381" key="StructurePopup/0.0.1366.742@0.0.1366.742" timestamp="1582527514731" />
     <state x="679" y="260" width="540" height="540" key="StructurePopup/0.0.1920.1053@0.0.1920.1053" timestamp="1582452497763" />
     <state x="619" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1582431736237">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="619" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582431736237" />
-    <state x="614" y="240" key="run.anything.popup" timestamp="1582482013393">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="437" y="169" key="run.anything.popup" timestamp="1582527360542">
+      <screen x="0" y="0" width="1366" height="742" />
     </state>
-    <state x="437" y="169" key="run.anything.popup/0.0.1366.742@0.0.1366.742" timestamp="1582465907298" />
+    <state x="437" y="169" key="run.anything.popup/0.0.1366.742@0.0.1366.742" timestamp="1582527360542" />
     <state x="614" y="240" key="run.anything.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582482013393" />
     <state x="613" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1582508133920">
       <screen x="0" y="0" width="1920" height="1053" />

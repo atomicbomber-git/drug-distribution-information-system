@@ -40,7 +40,7 @@
         </div>
 
         <div class="uk-margin uk-text-small">
-            <table class="uk-table uk-table-small uk-table-striped">
+            <table class="uk-table uk-table-small uk-table-striped uk-table-middle">
                 <thead>
                 <tr>
                     <th> #</th>
@@ -53,9 +53,9 @@
                 </thead>
 
                 <tbody>
-                <template v-for="(d_picked_obat, index) in this.d_picked_obats">
-                    <InvoicePembelianLine v-model="d_picked_obat"
-                                          :key="d_picked_obat.id"
+                <template v-for="(d_picked_obat_id, index) in Object.keys(this.d_picked_obats)">
+                    <InvoicePembelianLine v-model="d_picked_obats[d_picked_obat_id]"
+                                          :key="d_picked_obat_id"
                                           :error_data="error_data"
                                           :index="index"/>
                 </template>
@@ -68,6 +68,7 @@
 
 <script>
     import InvoicePembelianLine from "./InvoicePembelianLine";
+    import {keyBy} from "lodash";
 
     export default {
         components: {
@@ -95,7 +96,7 @@
 
                     jumlah_obat: 0,
                     harga_satuan_obat: 0,
-                    persentase_diskon_grosir: 0,
+                    diskon_grosir: 0,
 
                     picked: false,
                 }))
@@ -117,8 +118,10 @@
             },
 
             d_picked_obats() {
-                return this.d_obats
-                    .filter(({picked}) => picked)
+                return keyBy(
+                    this.d_obats.filter(({picked}) => picked),
+                    "id"
+                )
             }
         },
 
