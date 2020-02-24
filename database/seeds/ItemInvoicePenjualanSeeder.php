@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ItemInvoicePembelianSeeder extends Seeder
+class ItemInvoicePenjualanSeeder extends Seeder
 {
     /**
      * Run the database seeds.

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateItemInvoicePembeliansTable extends Migration
+class CreateItemInvoicePenjualanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateItemInvoicePembeliansTable extends Migration
      */
     public function up()
     {
-        Schema::create('item_invoice_pembelian', function (Blueprint $table) {
+        Schema::create('item_invoice_penjualan', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('invoice_id')->index();
             $table->unsignedInteger('obat_id')->index();
@@ -25,7 +25,7 @@ class CreateItemInvoicePembeliansTable extends Migration
             $table->timestamps();
 
             $table->foreign('obat_id')->references('id')->on('obat');
-            $table->foreign('invoice_id')->references('id')->on('invoice_pembelian')
+            $table->foreign('invoice_id')->references('id')->on('invoice_penjualan')
                 ->onDelete("CASCADE");
         });
     }
@@ -37,6 +37,6 @@ class CreateItemInvoicePembeliansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('item_invoice_pembelians');
+        Schema::dropIfExists('item_invoice_penjualans');
     }
 }

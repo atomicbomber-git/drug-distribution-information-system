@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\InvoicePembelian;
+use App\InvoicePenjualan;
 use Faker\Generator as Faker;
 
-$factory->define(InvoicePembelian::class, function (Faker $faker) {
+$factory->define(InvoicePenjualan::class, function (Faker $faker) {
     return [
         "nama_perusahaan" => $faker->company,
         "waktu_penerimaan" => now()->subMinutes(rand(0, 36_000)),

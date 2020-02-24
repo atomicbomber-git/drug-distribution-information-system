@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Constants\MessageState;
 use App\Http\Resources\InvoicePembelianResource;
-use App\InvoicePembelian;
+use App\InvoicePenjualan;
 use App\Obat;
 use Illuminate\Http\Request;
 use Jenssegers\Date\Date;
 use Yajra\DataTables\Facades\DataTables;
 
-class InvoicePembelianController extends Controller
+class InvoicePenjualanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,17 +20,17 @@ class InvoicePembelianController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            return DataTables::eloquent(InvoicePembelian::query())
+            return DataTables::eloquent(InvoicePenjualan::query())
                 ->addIndexColumn()
-                ->editColumn("tanggal_penerimaan", fn($invoice_pembelian)
-                    => Date::create($invoice_pembelian->tanggal_penerimaan)->format("l, j F Y H:i:s"))
-                ->addColumn("controls", fn($invoice_pembelian) =>
-                    view("invoice_pembelian._index_controls", compact("invoice_pembelian"))
+                ->editColumn("tanggal_penerimaan", fn($invoice_penjualan)
+                    => Date::create($invoice_penjualan->tanggal_penerimaan)->format("l, j F Y H:i:s"))
+                ->addColumn("controls", fn($invoice_penjualan) =>
+                    view("invoice_penjualan._index_controls", compact("invoice_penjualan"))
                 )
                 ->toJson();
         }
 
-        return response()->view("invoice_pembelian.index");
+        return response()->view("invoice_penjualan.index");
     }
 
     /**
@@ -44,7 +44,7 @@ class InvoicePembelianController extends Controller
             ->orderBy("nama")
             ->get();
 
-        return response()->view("invoice_pembelian.create", compact(
+        return response()->view("invoice_penjualan.create", compact(
             "obats"
         ));
     }
@@ -63,10 +63,10 @@ class InvoicePembelianController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\InvoicePembelian $invoicePembelian
+     * @param \App\InvoicePenjualan $invoicePembelian
      * @return \Illuminate\Http\Response
      */
-    public function show(InvoicePembelian $invoicePembelian)
+    public function show(InvoicePenjualan $invoicePembelian)
     {
         //
     }
@@ -74,10 +74,10 @@ class InvoicePembelianController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\InvoicePembelian $invoicePembelian
+     * @param \App\InvoicePenjualan $invoicePembelian
      * @return \Illuminate\Http\Response
      */
-    public function edit(InvoicePembelian $invoicePembelian)
+    public function edit(InvoicePenjualan $invoicePembelian)
     {
         //
     }
@@ -86,10 +86,10 @@ class InvoicePembelianController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\InvoicePembelian $invoicePembelian
+     * @param \App\InvoicePenjualan $invoicePembelian
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, InvoicePembelian $invoicePembelian)
+    public function update(Request $request, InvoicePenjualan $invoicePembelian)
     {
         //
     }
@@ -97,15 +97,15 @@ class InvoicePembelianController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param InvoicePembelian $invoice_pembelian
+     * @param InvoicePenjualan $invoice_penjualan
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function destroy(InvoicePembelian $invoice_pembelian)
+    public function destroy(InvoicePenjualan $invoice_penjualan)
     {
-        $invoice_pembelian->forceDelete();
+        $invoice_penjualan->forceDelete();
 
         return redirect()
-            ->route("invoice_pembelian.index", $invoice_pembelian)
+            ->route("invoice_penjualan.index", $invoice_penjualan)
             ->with("messages", [
                 [
                     "state" => MessageState::STATE_SUCCESS,

@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\ItemInvoicePembelian;
+use App\ItemInvoicePenjualan;
 use Faker\Generator as Faker;
 
-$factory->define(ItemInvoicePembelian::class, function (Faker $faker) {
+$factory->define(ItemInvoicePenjualan::class, function (Faker $faker) {
     $obat = \App\Obat::inRandomOrder()->first();
     $jumlah_obat = rand(1, 20) * 100;
 

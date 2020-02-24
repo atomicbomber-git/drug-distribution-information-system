@@ -10,8 +10,8 @@
 
     <div id="app">
         <invoice-pembelian-create
-            submit_url='{{ route('invoice_pembelian.store') }}'
-            redirect_url='{{ route('invoice_pembelian.index') }}'
+            submit_url='{{ route('invoice_penjualan.store') }}'
+            redirect_url='{{ route('invoice_penjualan.index') }}'
             :obats='{{ json_encode($obats) }}'
         ></invoice-pembelian-create>
     </div>

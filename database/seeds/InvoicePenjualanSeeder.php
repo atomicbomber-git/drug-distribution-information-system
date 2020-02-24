@@ -1,11 +1,11 @@
 <?php
 
-use App\InvoicePembelian;
-use App\ItemInvoicePembelian;
+use App\InvoicePenjualan;
+use App\ItemInvoicePenjualan;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class InvoicePembelianSeeder extends Seeder
+class InvoicePenjualanSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,12 +16,12 @@ class InvoicePembelianSeeder extends Seeder
     {
         DB::beginTransaction();
 
-        factory(InvoicePembelian::class, 100)
+        factory(InvoicePenjualan::class, 100)
             ->create()
-            ->each(function (InvoicePembelian $invoice_pembelian) {
-                factory(ItemInvoicePembelian::class, 10)
+            ->each(function (InvoicePenjualan $invoice_penjualan) {
+                factory(ItemInvoicePenjualan::class, 10)
                     ->create([
-                        "invoice_id" => $invoice_pembelian->id
+                        "invoice_id" => $invoice_penjualan->id
                     ]);
             });
 

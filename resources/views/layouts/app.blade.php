@@ -62,8 +62,8 @@
                         <a href="#"> TRANSAKSI</a>
                     </li>
 
-                    <li class="{{ \Illuminate\Support\Facades\Route::is("invoice_pembelian.*") ? "uk-active" : "" }}  ">
-                        <a href="{{ route("invoice_pembelian.index") }}">
+                    <li class="{{ \Illuminate\Support\Facades\Route::is("invoice_penjualan.*") ? "uk-active" : "" }}  ">
+                        <a href="{{ route("invoice_penjualan.index") }}">
                             <i class="fas fa-money-bill  "></i>
                             Invoice Pembelian
                         </a>

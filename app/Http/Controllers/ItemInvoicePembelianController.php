@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ItemInvoicePembelian;
+use App\ItemInvoicePenjualan;
 use Illuminate\Http\Request;
 
 class ItemInvoicePembelianController extends Controller
@@ -41,10 +41,10 @@ class ItemInvoicePembelianController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ItemInvoicePembelian  $itemInvoicePembelian
+     * @param  \App\ItemInvoicePenjualan  $itemInvoicePembelian
      * @return \Illuminate\Http\Response
      */
-    public function show(ItemInvoicePembelian $itemInvoicePembelian)
+    public function show(ItemInvoicePenjualan $itemInvoicePembelian)
     {
         //
     }
@@ -52,10 +52,10 @@ class ItemInvoicePembelianController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ItemInvoicePembelian  $itemInvoicePembelian
+     * @param  \App\ItemInvoicePenjualan  $itemInvoicePembelian
      * @return \Illuminate\Http\Response
      */
-    public function edit(ItemInvoicePembelian $itemInvoicePembelian)
+    public function edit(ItemInvoicePenjualan $itemInvoicePembelian)
     {
         //
     }
@@ -64,10 +64,10 @@ class ItemInvoicePembelianController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ItemInvoicePembelian  $itemInvoicePembelian
+     * @param  \App\ItemInvoicePenjualan  $itemInvoicePembelian
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ItemInvoicePembelian $itemInvoicePembelian)
+    public function update(Request $request, ItemInvoicePenjualan $itemInvoicePembelian)
     {
         //
     }
@@ -75,10 +75,10 @@ class ItemInvoicePembelianController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ItemInvoicePembelian  $itemInvoicePembelian
+     * @param  \App\ItemInvoicePenjualan  $itemInvoicePembelian
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ItemInvoicePembelian $itemInvoicePembelian)
+    public function destroy(ItemInvoicePenjualan $itemInvoicePembelian)
     {
         //
     }
