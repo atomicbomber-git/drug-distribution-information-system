@@ -35,7 +35,7 @@
         $(document).ready(function () {
             $("table.datatable").DataTable({
                 columns: [
-                    { data: "id" },
+                    { data: 'DT_RowIndex', orderable: false },
                     { data: "nama_perusahaan" },
                     { data: "tanggal_penerimaan" },
                     { data: "controls" },

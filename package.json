@@ -12,7 +12,6 @@
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^5.12.1",
         "axios": "^0.19",
-        "bootstrap": "^4.0.0",
         "cross-env": "^7.0",
         "datatables.net-dt": "^1.10.20",
         "jquery": "^3.2",
@@ -24,6 +23,7 @@
         "sass-loader": "^8.0.0",
         "uikit": "^3.3.2",
         "vue": "^2.5.17",
+        "vue-multiselect": "^2.1.6",
         "vue-template-compiler": "^2.6.10"
     }
 }

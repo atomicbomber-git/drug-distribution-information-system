@@ -9,11 +9,21 @@ UIkit.use(Icons);
 // Datatable
 window.$ = window.jQuery = require('jquery');
 
+// Lodash
+window._ = require('lodash');
+
 // Load datatables
 require('datatables.net-dt');
 
 window.Vue = require('vue');
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('invoice-pembelian-create',require("./components/InvoicePembelianCreate.vue").default);
+
+Vue.mixin({
+    methods: {
+        get: require("lodash").get
+    }
+});
+
 const app = new Vue({
     el: '#app',
 });

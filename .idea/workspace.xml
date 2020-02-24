@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb6f9944-727a-45d8-964b-1170f91ba173" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/atomicbomber.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/atomicbomber.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoicePembelianController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoicePembelianController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/InvoicePembelianFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/InvoicePembelianFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_23_200151_create_invoice_pembelians_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_23_200151_create_invoice_pembelians_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/invoice_pembelian/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoice_pembelian/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +41,45 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ddis@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ddis@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ddis@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ddis: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ddis@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ddis: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="invoice_pembelian: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ddis@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ddis: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="obat: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+    </expand>
     <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -144,11 +193,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/invoice_pembelian" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../property_developer_information_system" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
   </component>
@@ -199,6 +249,8 @@
       <workItem from="1582444401892" duration="347000" />
       <workItem from="1582444754986" duration="5889000" />
       <workItem from="1582457188225" duration="7983000" />
+      <workItem from="1582480953276" duration="1925000" />
+      <workItem from="1582506176420" duration="2418000" />
     </task>
     <servers />
   </component>
@@ -206,10 +258,11 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="64" y="0" width="1230" height="741" key="#Live_Templates" timestamp="1582459688197">
-      <screen x="0" y="0" width="1366" height="742" />
+    <state x="90" y="0" width="1230" height="741" key="#Live_Templates" timestamp="1582506657043">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="64" y="0" width="1230" height="741" key="#Live_Templates/0.0.1366.742@0.0.1366.742" timestamp="1582459688197" />
+    <state x="90" y="0" key="#Live_Templates/0.0.1920.1053@0.0.1920.1053" timestamp="1582506657043" />
     <state x="287" y="0" width="783" height="741" key="#PHP" timestamp="1582457809550">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
@@ -218,11 +271,11 @@
       <screen x="0" y="0" width="1366" height="742" />
     </state>
     <state x="402" y="133" width="553" height="475" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1366.742@0.0.1366.742" timestamp="1582459619453" />
-    <state x="198" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582476856577">
+    <state x="198" y="41" width="940" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582506758156">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="141" y="29" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.742@0.0.1366.742" timestamp="1582457827585" />
-    <state x="198" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582476856577" />
+    <state x="198" y="41" width="940" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582506758156" />
     <state x="491" y="90" width="376" height="561" key="#com.intellij.ide.util.MemberChooser" timestamp="1582457693103">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
@@ -236,31 +289,31 @@
     </state>
     <state x="99" y="100" width="1168" height="543" key="DiffContextDialog/0.0.1366.742@0.0.1366.742" timestamp="1582468762870" />
     <state x="139" y="142" width="1642" height="771" key="DiffContextDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582476930946" />
-    <state x="521" y="199" width="470" height="340" key="FileChooserDialogImpl" timestamp="1582457795118">
-      <screen x="0" y="0" width="1366" height="742" />
+    <state x="733" y="282" width="470" height="340" key="FileChooserDialogImpl" timestamp="1582481897311">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="521" y="199" width="470" height="340" key="FileChooserDialogImpl/0.0.1366.742@0.0.1366.742" timestamp="1582457795118" />
-    <state x="733" y="282" width="424" height="482" key="FileChooserDialogImpl/0.0.1920.1053@0.0.1920.1053" timestamp="1582446897434" />
-    <state width="1854" height="255" key="GridCell.Tab.0.bottom" timestamp="1582476882020">
+    <state x="733" y="282" width="424" height="482" key="FileChooserDialogImpl/0.0.1920.1053@0.0.1920.1053" timestamp="1582481897311" />
+    <state width="1846" height="249" key="GridCell.Tab.0.bottom" timestamp="1582506444358">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1320" height="286" key="GridCell.Tab.0.bottom/0.0.1366.742@0.0.1366.742" timestamp="1582457917737" />
-    <state width="1854" height="255" key="GridCell.Tab.0.bottom/0.0.1920.1053@0.0.1920.1053" timestamp="1582476882020" />
-    <state width="1854" height="255" key="GridCell.Tab.0.center" timestamp="1582476882019">
+    <state width="1846" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1053@0.0.1920.1053" timestamp="1582506444358" />
+    <state width="1846" height="249" key="GridCell.Tab.0.center" timestamp="1582506444356">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1320" height="286" key="GridCell.Tab.0.center/0.0.1366.742@0.0.1366.742" timestamp="1582457917732" />
-    <state width="1854" height="255" key="GridCell.Tab.0.center/0.0.1920.1053@0.0.1920.1053" timestamp="1582476882019" />
-    <state width="1854" height="255" key="GridCell.Tab.0.left" timestamp="1582476882017">
+    <state width="1846" height="249" key="GridCell.Tab.0.center/0.0.1920.1053@0.0.1920.1053" timestamp="1582506444356" />
+    <state width="1846" height="249" key="GridCell.Tab.0.left" timestamp="1582506444355">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1320" height="286" key="GridCell.Tab.0.left/0.0.1366.742@0.0.1366.742" timestamp="1582457917730" />
-    <state width="1854" height="255" key="GridCell.Tab.0.left/0.0.1920.1053@0.0.1920.1053" timestamp="1582476882017" />
-    <state width="1854" height="255" key="GridCell.Tab.0.right" timestamp="1582476882019">
+    <state width="1846" height="249" key="GridCell.Tab.0.left/0.0.1920.1053@0.0.1920.1053" timestamp="1582506444355" />
+    <state width="1846" height="249" key="GridCell.Tab.0.right" timestamp="1582506444357">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1320" height="286" key="GridCell.Tab.0.right/0.0.1366.742@0.0.1366.742" timestamp="1582457917734" />
-    <state width="1854" height="255" key="GridCell.Tab.0.right/0.0.1920.1053@0.0.1920.1053" timestamp="1582476882019" />
+    <state width="1846" height="249" key="GridCell.Tab.0.right/0.0.1920.1053@0.0.1920.1053" timestamp="1582506444357" />
     <state x="827" y="460" width="235" height="128" key="Laravel.ExtractPartialViewDialog" timestamp="1582453447979">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
@@ -287,15 +340,15 @@
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="619" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582431736237" />
-    <state x="437" y="169" key="run.anything.popup" timestamp="1582465907298">
-      <screen x="0" y="0" width="1366" height="742" />
+    <state x="614" y="240" key="run.anything.popup" timestamp="1582482013393">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="437" y="169" key="run.anything.popup/0.0.1366.742@0.0.1366.742" timestamp="1582465907298" />
-    <state x="614" y="240" key="run.anything.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582447735235" />
-    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1582476888979">
+    <state x="614" y="240" key="run.anything.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582482013393" />
+    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1582508133920">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="436" y="163" width="672" height="478" key="search.everywhere.popup/0.0.1366.742@0.0.1366.742" timestamp="1582468709653" />
-    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582476888979" />
+    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582508133920" />
   </component>
 </project>

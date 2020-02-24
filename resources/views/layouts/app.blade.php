@@ -11,15 +11,11 @@
 
     <title>{{ config('app.name') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"
-            defer></script>
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}"
           rel="stylesheet">
 </head>
-<body id="app">
+<body>
 
 <header class="uk-container uk-container-expand uk-background-primary uk-light">
     <nav uk-navbar>
@@ -46,7 +42,7 @@
 </header>
 
 <main class="uk-grid-collapse uk-child-width-expand@s"
-     uk-grid>
+      uk-grid>
 
     <aside class="uk-width-1-6">
         <div class="uk-padding uk-height-viewport">
@@ -63,7 +59,7 @@
                     </li>
 
                     <li class="uk-margin-top">
-                        <a href="#"> TRANSAKSI </a>
+                        <a href="#"> TRANSAKSI</a>
                     </li>
 
                     <li class="{{ \Illuminate\Support\Facades\Route::is("invoice_pembelian.*") ? "uk-active" : "" }}  ">

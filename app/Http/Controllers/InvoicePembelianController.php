@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Constants\MessageState;
+use App\Http\Resources\InvoicePembelianResource;
 use App\InvoicePembelian;
+use App\Obat;
 use Illuminate\Http\Request;
+use Jenssegers\Date\Date;
 use Yajra\DataTables\Facades\DataTables;
 
 class InvoicePembelianController extends Controller
@@ -17,9 +20,10 @@ class InvoicePembelianController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            return DataTables::eloquent(
-                InvoicePembelian::query()
-            )
+            return DataTables::eloquent(InvoicePembelian::query())
+                ->addIndexColumn()
+                ->editColumn("tanggal_penerimaan", fn($invoice_pembelian)
+                    => Date::create($invoice_pembelian->tanggal_penerimaan)->format("l, j F Y H:i:s"))
                 ->addColumn("controls", fn($invoice_pembelian) =>
                     view("invoice_pembelian._index_controls", compact("invoice_pembelian"))
                 )
@@ -36,7 +40,13 @@ class InvoicePembelianController extends Controller
      */
     public function create()
     {
-        return response()->view("invoice_pembelian.create");
+        $obats = Obat::query()
+            ->orderBy("nama")
+            ->get();
+
+        return response()->view("invoice_pembelian.create", compact(
+            "obats"
+        ));
     }
 
     /**
