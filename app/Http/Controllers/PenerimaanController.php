@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Constants\MessageState;
 use App\GlobalHelpers\Formatter;
+use App\Obat;
 use App\Penerimaan;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
@@ -17,8 +18,6 @@ class PenerimaanController extends Controller
      */
     public function index(Request $request)
     {
-
-
         if ($request->ajax()) {
             return DataTables::eloquent(
                 Penerimaan::query()
@@ -52,7 +51,13 @@ class PenerimaanController extends Controller
      */
     public function create()
     {
-        //
+        $obats = Obat::query()
+            ->orderBy("nama")
+            ->get();
+
+        return response()->view(
+            "penerimaan.create", compact("obats")
+        );
     }
 
     /**

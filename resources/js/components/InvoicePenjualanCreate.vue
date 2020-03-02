@@ -67,7 +67,7 @@
 </template>
 
 <script>
-    import InvoicePembelianLine from "./InvoicePembelianLine";
+    import InvoicePembelianLine from "./InvoicePenjualanLine";
     import {keyBy} from "lodash";
 
     export default {

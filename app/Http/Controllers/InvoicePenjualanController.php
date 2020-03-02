@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Constants\MessageState;
 use App\GlobalHelpers\Formatter;
-use App\Http\Resources\InvoicePembelianResource;
 use App\InvoicePenjualan;
 use App\Obat;
 use Illuminate\Http\Request;
-use Jenssegers\Date\Date;
 use Yajra\DataTables\Facades\DataTables;
 
 class InvoicePenjualanController extends Controller
@@ -23,10 +21,8 @@ class InvoicePenjualanController extends Controller
         if ($request->ajax()) {
             return DataTables::eloquent(InvoicePenjualan::query())
                 ->addIndexColumn()
-                ->editColumn("waktu_penerimaan", fn($invoice_penjualan)
-                    => Formatter::fancyDate($invoice_penjualan->waktu_penerimaan))
-                ->addColumn("controls", fn($invoice_penjualan) =>
-                    view("invoice_penjualan._index_controls", compact("invoice_penjualan"))
+                ->editColumn("waktu_penerimaan", fn($invoice_penjualan) => Formatter::fancyDate($invoice_penjualan->waktu_penerimaan))
+                ->addColumn("controls", fn($invoice_penjualan) => view("invoice_penjualan._index_controls", compact("invoice_penjualan"))
                 )
                 ->toJson();
         }

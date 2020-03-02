@@ -9,7 +9,7 @@
     @include('layouts._messages')
 
     <div class="uk-flex uk-flex-right uk-margin-medium-bottom">
-        <a href="{{ route("invoice_penjualan.create") }}" class="uk-button uk-button-primary">
+        <a href="{{ route("penerimaan.create") }}" class="uk-button uk-button-primary">
             Penerimaan
             <i class="fas fa-plus-circle"></i>
         </a>

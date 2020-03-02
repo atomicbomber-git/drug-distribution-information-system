@@ -16,11 +16,13 @@ window._ = require('lodash');
 require('datatables.net-dt');
 
 window.Vue = require('vue');
-Vue.component('invoice-pembelian-create',require("./components/InvoicePembelianCreate.vue").default);
+Vue.component('invoice-penjualan-create',require("./components/InvoicePenjualanCreate.vue").default);
+Vue.component('penerimaan-create',require("./components/PenerimaanCreate.vue").default);
 
 Vue.mixin({
     methods: {
-        get: require("lodash").get
+        get: require("lodash").get,
+        currencyFormat: require("./numeralHelper").currencyFormat
     }
 });
 

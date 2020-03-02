@@ -37,7 +37,7 @@
 </template>
 <script>
     export default {
-        name: 'InvoicePembelianLine',
+        name: 'InvoicePenjualanLine',
         props: {
             value: {},
             error_data: {},
