@@ -33,7 +33,6 @@
             >
             </Multiselect>
 
-
             <span class="uk-text-danger uk-text-small">
                 {{ this.get(error_data, 'errors.obat[0]', '')}}
             </span>
@@ -66,7 +65,7 @@
                         <td> </td>
                         <td class="uk-text-right"> Sub Total: </td>
                         <td class="uk-text-right">
-                            {{ d_picked_obats_subtotal_sum }}
+                            {{ currencyFormat(d_picked_obats_subtotal_sum) }}
                         </td>
                     </tr>
                 </tfoot>
@@ -120,7 +119,7 @@
                 if (new_d_obat === null) return
                 this.d_obat.picked = true
                 this.d_obat = null
-            }
+            },
         },
 
         computed: {
@@ -131,10 +130,7 @@
 
             d_picked_obats_subtotal_sum() {
                 return Object.keys(this.d_picked_obats).reduce((curr, next) => {
-                    return curr + (
-                        (this.d_picked_obats[next]["jumlah_obat"] ?? 0) *
-                        (this.d_picked_obats[next]["harga_satuan_obat"] ?? 0)
-                    )
+                    return curr + (this.d_picked_obats[next].sub_total ?? 0)
                 }, 0)
             },
 

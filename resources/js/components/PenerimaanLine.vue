@@ -43,14 +43,15 @@
         },
 
         watch: {
+            sub_total(new_sub_total) {
+                this.value.sub_total = new_sub_total
+            },
+
             value: {
-                deep: true,
                 handler: function () {
-                    this.$emit('input', {
-                        ...this.value,
-                        sub_total: this.sub_total
-                    });
-                }
+                    this.$emit('input', this.value);
+                },
+                deep: true,
             }
         }
     }
