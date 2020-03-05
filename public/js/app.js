@@ -2206,6 +2206,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -2216,13 +2221,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     Multiselect: __webpack_require__(/*! vue-multiselect */ "./node_modules/vue-multiselect/dist/vue-multiselect.min.js").Multiselect
   },
   props: {
-    "obats": Array
+    "obats": Array,
+    submit_url: String,
+    redirect_url: String
   },
   mounted: function mounted() {},
   data: function data() {
     return {
-      submit_url: null,
-      redirect_url: null,
       nama_supplier: null,
       error_data: null,
       d_obat: null,
@@ -2264,10 +2269,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var picked = _ref2.picked;
         return picked;
       }), "id");
+    },
+    form_data: function form_data() {
+      return {
+        nama_supplier: this.nama_supplier,
+        item_penerimaans: Object(lodash__WEBPACK_IMPORTED_MODULE_1__["toArray"])(this.d_picked_obats).map(function (obat) {
+          return Object(lodash__WEBPACK_IMPORTED_MODULE_1__["pick"])(obat, ["id", "jumlah_obat", "harga_satuan_obat"]);
+        })
+      };
     }
   },
   methods: {
-    onFormSubmit: function onFormSubmit() {}
+    onFormSubmit: function onFormSubmit() {
+      axios.post(this.submit_url, this.form_data)["catch"](function (error) {
+        console.log(error);
+      });
+    }
   }
 });
 
@@ -61368,7 +61385,7 @@ var render = function() {
                 _c("td"),
                 _vm._v(" "),
                 _c("td", { staticClass: "uk-text-right" }, [
-                  _vm._v(" Sub Total: ")
+                  _vm._v(" Sub Total (Rp.): ")
                 ]),
                 _vm._v(" "),
                 _c("td", { staticClass: "uk-text-right" }, [
@@ -61384,7 +61401,9 @@ var render = function() {
             ])
           ]
         )
-      ])
+      ]),
+      _vm._v(" "),
+      _vm._m(1)
     ]
   )
 }
@@ -61409,6 +61428,21 @@ var staticRenderFns = [
           _vm._v(" Sub Total (Rp.) ")
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "uk-margin uk-flex uk-flex-right" }, [
+      _c(
+        "button",
+        {
+          staticClass: "uk-button uk-button-primary",
+          attrs: { type: "submit" }
+        },
+        [_vm._v("\n            Terima\n        ")]
+      )
     ])
   }
 ]

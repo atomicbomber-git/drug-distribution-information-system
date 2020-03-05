@@ -68,7 +68,15 @@ class PenerimaanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            "nama_supplier" => "required|string",
+            "item_penerimaans" => "required|array",
+            "item_penerimaans.*.id" => "required|exists:obats",
+            "item_penerimaans.*.jumlah_obat" => "required|numeric|gt:0",
+            "item_penerimaans.*.harga_satuan_obat" => "required|numeric|gte:0",
+        ]);
+
+        return response($data, 400);
     }
 
     /**

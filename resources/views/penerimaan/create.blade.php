@@ -10,8 +10,8 @@
 
     <div id="app">
         <penerimaan-create
-            submit_url='{{ route('penerimaan.store') }}'
-            redirect_url='{{ route('penerimaan.index') }}'
+            submit_url="{{ route('penerimaan.store') }}"
+            redirect_url="{{ route('penerimaan.index') }}"
             :obats='{{ json_encode($obats) }}'
         ></penerimaan-create>
     </div>

@@ -63,7 +63,7 @@
                         <td> </td>
                         <td> </td>
                         <td> </td>
-                        <td class="uk-text-right"> Sub Total: </td>
+                        <td class="uk-text-right"> Sub Total (Rp.): </td>
                         <td class="uk-text-right">
                             {{ currencyFormat(d_picked_obats_subtotal_sum) }}
                         </td>
@@ -72,12 +72,17 @@
             </table>
         </div>
 
+        <div class="uk-margin uk-flex uk-flex-right">
+            <button type="submit" class="uk-button uk-button-primary">
+                Terima
+            </button>
+        </div>
     </form>
 </template>
 
 <script>
     import InvoicePembelianLine from "./InvoicePenjualanLine";
-    import {keyBy} from "lodash";
+    import {keyBy, toArray, pick} from "lodash";
     import PenerimaanLine from "./PenerimaanLine";
 
     export default {
@@ -89,6 +94,8 @@
 
         props: {
             "obats": Array,
+            submit_url: String,
+            redirect_url: String,
         },
 
         mounted() {
@@ -96,8 +103,6 @@
 
         data() {
             return {
-                submit_url: null,
-                redirect_url: null,
                 nama_supplier: null,
                 error_data: null,
 
@@ -139,11 +144,23 @@
                     this.d_obats.filter(({picked}) => picked),
                     "id"
                 )
+            },
+
+            form_data() {
+                return {
+                    nama_supplier: this.nama_supplier,
+                    item_penerimaans: toArray(this.d_picked_obats)
+                        .map(obat => pick(obat, ["id", "jumlah_obat", "harga_satuan_obat"]))
+                }
             }
         },
 
         methods: {
             onFormSubmit() {
+                axios.post(this.submit_url, this.form_data)
+                    .catch(error => {
+                        console.log(error)
+                    })
             }
         }
     }
