@@ -21,7 +21,7 @@ class InvoicePenjualanController extends Controller
         if ($request->ajax()) {
             return DataTables::eloquent(InvoicePenjualan::query())
                 ->addIndexColumn()
-                ->editColumn("waktu_penerimaan", fn($invoice_penjualan) => Formatter::fancyDate($invoice_penjualan->waktu_penerimaan))
+                ->editColumn("waktu_penerimaan", fn($invoice_penjualan) => Formatter::fancyDatetime($invoice_penjualan->waktu_penerimaan))
                 ->addColumn("controls", fn($invoice_penjualan) => view("invoice_penjualan._index_controls", compact("invoice_penjualan"))
                 )
                 ->toJson();
@@ -60,10 +60,10 @@ class InvoicePenjualanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\InvoicePenjualan $invoicePembelian
+     * @param \App\InvoicePenjualan $invoice_penjualan
      * @return \Illuminate\Http\Response
      */
-    public function show(InvoicePenjualan $invoicePembelian)
+    public function show(InvoicePenjualan $invoice_penjualan)
     {
         //
     }
@@ -71,10 +71,10 @@ class InvoicePenjualanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\InvoicePenjualan $invoicePembelian
+     * @param \App\InvoicePenjualan $invoice_penjualan
      * @return \Illuminate\Http\Response
      */
-    public function edit(InvoicePenjualan $invoicePembelian)
+    public function edit(InvoicePenjualan $invoice_penjualan)
     {
         //
     }
@@ -83,10 +83,10 @@ class InvoicePenjualanController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\InvoicePenjualan $invoicePembelian
+     * @param \App\InvoicePenjualan $invoice_penjualan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, InvoicePenjualan $invoicePembelian)
+    public function update(Request $request, InvoicePenjualan $invoice_penjualan)
     {
         //
     }
@@ -99,15 +99,23 @@ class InvoicePenjualanController extends Controller
      */
     public function destroy(InvoicePenjualan $invoice_penjualan)
     {
-        $invoice_penjualan->forceDelete();
+        $messages = collect();
+        try {
+            $invoice_penjualan->forceDelete();
+            $messages->add([
+                "state" => MessageState::STATE_SUCCESS,
+                "content" => __("messages.delete.success")
+            ]);
+        }
+        catch (\Throwable $exception) {
+            $messages->add([
+                "state" => MessageState::STATE_DANGER,
+                "content" => __("messages.delete.failure")
+            ]);
+        }
 
         return redirect()
             ->route("invoice_penjualan.index", $invoice_penjualan)
-            ->with("messages", [
-                [
-                    "state" => MessageState::STATE_SUCCESS,
-                    "content" => __("messages.delete.success")
-                ]
-            ]);
+            ->with("messages", $messages);
     }
 }

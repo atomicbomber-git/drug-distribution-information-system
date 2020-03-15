@@ -126,15 +126,23 @@ class ObatController extends Controller
      */
     public function destroy(Obat $obat, Redirector $redirector)
     {
-        $obat->forceDelete();
+        $messages = collect();
+        try {
+            $obat->forceDelete();
+            $messages->add([
+                "state" => MessageState::STATE_SUCCESS,
+                "content" => __("messages.delete.success")
+            ]);
+        }
+        catch (\Throwable $exception) {
+            $messages->add([
+                "state" => MessageState::STATE_DANGER,
+                "content" => __("messages.delete.failure")
+            ]);
+        }
 
         return $redirector
             ->route("obat.index")
-            ->with("messages", [
-                [
-                    "state" => MessageState::STATE_SUCCESS,
-                    "content" => __("messages.delete.success")
-                ]
-            ]);
+            ->with("messages", $messages);
     }
 }

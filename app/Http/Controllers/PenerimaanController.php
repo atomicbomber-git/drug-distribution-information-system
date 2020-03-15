@@ -7,7 +7,6 @@ use App\GlobalHelpers\Formatter;
 use App\ItemPenerimaan;
 use App\Obat;
 use App\Penerimaan;
-use App\Stock;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
@@ -33,7 +32,7 @@ class PenerimaanController extends Controller
                 ->addIndexColumn()
                 ->editColumn(
                     "waktu_penerimaan",
-                    fn($penerimaan) => Formatter::fancyDate($penerimaan->waktu_penerimaan)
+                    fn($penerimaan) => Formatter::fancyDatetime($penerimaan->waktu_penerimaan)
                 )
                 ->addColumn("controls",
                     fn($penerimaan) => view(
@@ -101,7 +100,10 @@ class PenerimaanController extends Controller
                 ]);
 
             $item_penerimaan->stock()->create([
-               "jumlah" => $item_penerimaan->jumlah,
+                "jumlah" => $item_penerimaan->jumlah,
+                "obat_id" => $data_item_penerimaan["id"],
+                "tanggal_kadaluarsa" => $data_item_penerimaan["tanggal_kadaluarsa"],
+                "harga_satuan" => $data_item_penerimaan["harga_satuan_obat"],
             ]);
         }
 
@@ -138,7 +140,15 @@ class PenerimaanController extends Controller
      */
     public function edit(Penerimaan $penerimaan)
     {
-        //
+        $penerimaan->load("item_penerimaans");
+
+        $obats = Obat::query()
+            ->get();
+
+        return response()->view("penerimaan.edit", compact(
+            "penerimaan",
+            "obats"
+        ));
     }
 
     /**

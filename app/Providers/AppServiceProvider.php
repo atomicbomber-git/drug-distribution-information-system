@@ -3,12 +3,10 @@
 namespace App\Providers;
 
 use App\ItemPenerimaan;
-use App\Obat;
 use App\Support\TipeEntitas;
 use Bezhanov\Faker\ProviderCollectionHelper;
 use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Relations\Relation;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Factory as ValidatorFactory;
 use Illuminate\Validation\Validator;

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stock extends Model
 {
-    protected $table = "stock";
+    const TABLE_NAME = "stock";
+
+    protected $table = self::TABLE_NAME;
     protected $guarded = [];
 }

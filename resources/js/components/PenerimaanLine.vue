@@ -62,6 +62,10 @@
             index: {}
         },
 
+        mounted() {
+            this.value.sub_total = this.sub_total
+        },
+
         computed: {
             sub_total() {
                 return (this.value.jumlah_obat *

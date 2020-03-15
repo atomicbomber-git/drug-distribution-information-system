@@ -121,6 +121,7 @@
             obats: Array,
             submit_url: String,
             redirect_url: String,
+            penerimaan: Object,
         },
 
         data() {
@@ -130,15 +131,34 @@
                 error_data: null,
 
                 d_obat: null,
-                d_obats: this.obats.map(obat => ({
-                    ...obat,
+                d_obats: this.obats.map(obat => {
+                    let item_penerimaan = this.penerimaan.item_penerimaans.find(item_penerimaan => {
+                        return item_penerimaan.obat_id === obat.id
+                    });
 
-                    jumlah_obat: 0,
-                    harga_satuan_obat: 0,
-                    sub_total: 0,
+                    if (item_penerimaan) {
+                        return {
+                            ...obat,
 
-                    picked: false,
-                }))
+                            tanggal_kadaluarsa: moment(item_penerimaan.tanggal_kadaluarsa).format("YYYY-MM-DD"),
+                            jumlah_obat: item_penerimaan.jumlah,
+                            harga_satuan_obat: item_penerimaan.harga_satuan,
+                            sub_total: null,
+
+                            picked: true,
+                        }
+                    }
+
+                    return {
+                        ...obat,
+
+                        jumlah_obat: 0,
+                        harga_satuan_obat: 0,
+                        sub_total: 0,
+
+                        picked: false,
+                    }
+                })
             }
         },
 

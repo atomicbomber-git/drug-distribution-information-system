@@ -65,7 +65,14 @@
                     <li class="{{ \Illuminate\Support\Facades\Route::is("invoice_penjualan.*") ? "uk-active" : "" }}  ">
                         <a href="{{ route("invoice_penjualan.index") }}">
                             <i class="fas fa-money-bill"></i>
-                            Invoice Pembelian
+                            Invoice Penjualan
+                        </a>
+                    </li>
+
+                    <li class="{{ \Illuminate\Support\Facades\Route::is("stock_gabungan.*") ? "uk-active" : "" }}  ">
+                        <a href="{{ route("stock_gabungan.index") }}">
+                            <i class="fas fa-boxes"></i>
+                            Stock Gabungan
                         </a>
                     </li>
 

@@ -3,26 +3,19 @@
 @section("content")
     <h1 class="uk-text-bolder">
         <i class="fas fa-pills"></i>
-        Invoice Penjualan
+        Detail Stock "{{ $obat->nama }}}"
     </h1>
 
     @include('layouts._messages')
 
-    <div class="uk-flex uk-flex-right uk-margin-medium-bottom">
-        <a href="{{ route("invoice_penjualan.create") }}" class="uk-button uk-button-primary">
-            Invoice Penjualan
-            <i class="fas fa-plus-circle"></i>
-        </a>
-    </div>
-
     <table class="datatable uk-width-expand uk-table uk-table-striped">
         <thead>
-            <tr>
-                <th> No </th>
-                <th> Nama Perusahaan </th>
-                <th> Waktu Penerimaan </th>
-                <th> Manajemen </th>
-            </tr>
+        <tr>
+            <th> No </th>
+            <th> Jumlah </th>
+            <th> Harga Satuan (Rp.) </th>
+            <th> Tanggal Kadaluarsa </th>
+        </tr>
         </thead>
 
         <tbody>
@@ -36,10 +29,11 @@
             $("table.datatable").DataTable({
                 columns: [
                     { data: 'DT_RowIndex', orderable: false },
-                    { data: "nama_perusahaan" },
-                    { data: "waktu_penerimaan" },
-                    { data: "controls" },
+                    { data: "jumlah", className: "dt-right" },
+                    { data: "harga_satuan", className: "dt-right" },
+                    { data: "tanggal_kadaluarsa", className: "dt-right" },
                 ],
+                "order": [[ 1, "asc" ]],
                 processing: true,
                 serverSide: true,
                 ajax: "",
