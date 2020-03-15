@@ -40,6 +40,7 @@
                     { data: "waktu_penerimaan" },
                     { data: "controls" },
                 ],
+                "order": [[ 2, "asc" ]],
                 processing: true,
                 serverSide: true,
                 ajax: "",

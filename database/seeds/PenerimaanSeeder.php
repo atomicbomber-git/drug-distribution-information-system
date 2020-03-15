@@ -17,7 +17,7 @@ class PenerimaanSeeder extends Seeder
         factory(\App\Penerimaan::class, 100)
             ->create()
             ->each(function (\App\Penerimaan $penerimaan) {
-                factory(\App\ItemPenerimaan::class)
+                factory(\App\ItemPenerimaan::class, rand(1, 5))
                     ->create([
                         "penerimaan_id" => $penerimaan->id,
                     ]);

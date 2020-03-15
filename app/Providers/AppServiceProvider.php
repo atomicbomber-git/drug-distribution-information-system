@@ -2,8 +2,13 @@
 
 namespace App\Providers;
 
+use App\ItemPenerimaan;
+use App\Obat;
+use App\Support\TipeEntitas;
 use Bezhanov\Faker\ProviderCollectionHelper;
 use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Factory as ValidatorFactory;
 use Illuminate\Validation\Validator;
@@ -35,7 +40,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->extend(ValidatorFactory::class, function (ValidatorFactory $factory) {
             $factory->resolver(function ($translator, $data, $rules, $messages, $customAttributes) {
                 $validator = new Validator($translator, $data, $rules, $messages, $customAttributes);
-
                 $validator->setImplicitAttributesFormatter(function ($attribute) {
                     [$group_name, $index, $attribute_name] = explode(".", $attribute);
 
@@ -44,10 +48,13 @@ class AppServiceProvider extends ServiceProvider
                         $index + 1,
                     );
                 });
-
                 return $validator;
             });
             return $factory;
         });
+
+        Relation::morphMap([
+            TipeEntitas::ITEM_PENERIMAAN => ItemPenerimaan::class,
+        ]);
     }
 }

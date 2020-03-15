@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb6f9944-727a-45d8-964b-1170f91ba173" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/drug-distributor-information-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/drug-distributor-information-system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PenerimaanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PenerimaanController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/PenerimaanCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/PenerimaanCreate.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/PenerimaanLine.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/PenerimaanLine.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ItemPenerimaan.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ItemPenerimaan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Penerimaan.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Penerimaan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ItemPenerimaanFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ItemPenerimaanFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/id/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/id/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/penerimaan/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/penerimaan/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +172,7 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
       <path value="$PROJECT_DIR$/vendor/jenssegers/date" />
+      <path value="$PROJECT_DIR$/vendor/rap2hpoutre/laravel-log-viewer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1YC1OtaUm25MF063lXe6RsBd5ii" />
@@ -252,7 +260,7 @@
       <workItem from="1583406815512" duration="342000" />
       <workItem from="1583407174062" duration="129000" />
       <workItem from="1584187704655" duration="7183000" />
-      <workItem from="1584237317177" duration="5560000" />
+      <workItem from="1584237317177" duration="10346000" />
     </task>
     <servers />
   </component>
@@ -332,10 +340,10 @@
       <screen x="0" y="0" width="1366" height="742" />
     </state>
     <state x="382" y="94" width="593" height="553" key="MultipleFileMergeDialog/0.0.1366.742@0.0.1366.742" timestamp="1582457333856" />
-    <state x="629" y="325" width="953" height="424" key="NewPhpClassDialog" timestamp="1582554463633">
+    <state x="629" y="325" width="953" height="424" key="NewPhpClassDialog" timestamp="1584244794960">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
-    <state x="629" y="325" width="953" height="424" key="NewPhpClassDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1582554463633" />
+    <state x="629" y="325" width="953" height="424" key="NewPhpClassDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1584244794960" />
     <state x="323" y="12" key="SettingsEditor" timestamp="1582466876205">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
@@ -354,15 +362,15 @@
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="564" y="204" width="944" height="720" key="find.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1582549391924" />
-    <state x="614" y="240" width="672" height="680" key="run.anything.popup" timestamp="1584243492788">
+    <state x="614" y="240" width="672" height="680" key="run.anything.popup" timestamp="1584249325516">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="437" y="169" key="run.anything.popup/0.0.1366.742@0.0.1366.742" timestamp="1582527360542" />
-    <state x="614" y="240" width="672" height="680" key="run.anything.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1584243492788" />
-    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1584243754531">
+    <state x="614" y="240" width="672" height="680" key="run.anything.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1584249325516" />
+    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1584252806697">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="436" y="163" width="672" height="478" key="search.everywhere.popup/0.0.1366.742@0.0.1366.742" timestamp="1582468709653" />
-    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1584243754531" />
+    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1584252806697" />
   </component>
 </project>

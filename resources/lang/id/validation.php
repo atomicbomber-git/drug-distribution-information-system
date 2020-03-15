@@ -111,14 +111,7 @@ return [
     ],
 
     'attributes' => [
-        "description" => "deskripsi",
-        "title" => "judul",
-        "document" => "dokumen",
-        "year" => "tahun",
-        "category_id" => "kategori",
-        "content" => "isi",
-        "author_first_name" => "nama depan penulis",
-        "author_last_name" => "nama belakang penulis",
+        "item_penerimaans" => "item penerimaan",
         "jumlah_obat" => "jumlah obat",
         "harga_satuan_obat" => "harga satuan obat",
         "tanggal_kadaluarsa" => "tanggal kadaluarsa",

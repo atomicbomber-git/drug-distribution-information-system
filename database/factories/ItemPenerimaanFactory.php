@@ -15,3 +15,9 @@ $factory->define(ItemPenerimaan::class, function (Faker $faker) {
         "tanggal_kadaluarsa" => now()->addMonths(rand(10, 20))->startOfMonth(),
     ];
 });
+
+$factory->afterCreating(ItemPenerimaan::class, function (ItemPenerimaan $item_penerimaan) {
+    $item_penerimaan->stock()->create([
+        "jumlah" => $item_penerimaan->jumlah,
+    ]);
+});

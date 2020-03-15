@@ -7,6 +7,7 @@ use App\GlobalHelpers\Formatter;
 use App\ItemPenerimaan;
 use App\Obat;
 use App\Penerimaan;
+use App\Stock;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
@@ -88,15 +89,20 @@ class PenerimaanController extends Controller
                 "waktu_penerimaan" => $data["waktu_penerimaan"],
             ]);
 
-        foreach ($data["item_penerimaans"] ?? [] as $item_penerimaan) {
-            ItemPenerimaan::query()
+        foreach ($data["item_penerimaans"] ?? [] as $data_item_penerimaan) {
+            /** @var ItemPenerimaan $item_penerimaan */
+            $item_penerimaan = ItemPenerimaan::query()
                 ->create([
                     "penerimaan_id" => $penerimaan->id,
-                    "obat_id" => $item_penerimaan["id"],
-                    "tanggal_kadaluarsa" => $item_penerimaan["tanggal_kadaluarsa"],
-                    "jumlah" => $item_penerimaan["jumlah_obat"],
-                    "harga_satuan" => $item_penerimaan["harga_satuan_obat"],
+                    "obat_id" => $data_item_penerimaan["id"],
+                    "tanggal_kadaluarsa" => $data_item_penerimaan["tanggal_kadaluarsa"],
+                    "jumlah" => $data_item_penerimaan["jumlah_obat"],
+                    "harga_satuan" => $data_item_penerimaan["harga_satuan_obat"],
                 ]);
+
+            $item_penerimaan->stock()->create([
+               "jumlah" => $item_penerimaan->jumlah,
+            ]);
         }
 
         DB::commit();
@@ -155,7 +161,14 @@ class PenerimaanController extends Controller
      */
     public function destroy(Penerimaan $penerimaan)
     {
+        DB::beginTransaction();
+
+        $penerimaan->item_penerimaans->each(function (ItemPenerimaan $item_penerimaan) {
+            $item_penerimaan->stock()->decrement("jumlah", $item_penerimaan->jumlah);
+        });
+
         $penerimaan->forceDelete();
+        DB::commit();
 
         return redirect()
             ->route("penerimaan.index", $penerimaan)
