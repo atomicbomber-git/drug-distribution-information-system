@@ -21,6 +21,26 @@
         </div>
 
         <div class="uk-margin">
+            <label for="waktu_penerimaan"
+                   class="uk-form-label"> Waktu Penerimaan
+            </label>
+
+            <input
+                id="waktu_penerimaan"
+                v-model="waktu_penerimaan"
+                placeholder="Waktu Penerimaan"
+                class="uk-input"
+                :class="{
+                    'uk-form-danger': !!this.get(error_data, 'errors.waktu_penerimaan[0]', false)
+                }"
+                type="datetime-local"
+            >
+            <span class="uk-text-danger uk-text-small">
+                {{ this.get(error_data, 'errors.waktu_penerimaan[0]', '')}}
+            </span>
+        </div>
+
+        <div class="uk-margin">
             <label
                 class="uk-form-label"> Obat
             </label>
@@ -44,36 +64,37 @@
                 <tr>
                     <th> #</th>
                     <th> Nama</th>
-                    <th class="uk-text-right"> Jumlah </th>
-                    <th class="uk-text-right"> Harga Satuan (Rp.) </th>
-                    <th class="uk-text-right"> Sub Total (Rp.) </th>
+                    <th class="uk-text-right"> Jumlah</th>
+                    <th class="uk-text-right"> Harga Satuan (Rp.)</th>
+                    <th class="uk-text-right"> Sub Total (Rp.)</th>
                 </tr>
                 </thead>
 
                 <tbody>
                 <template v-for="(d_picked_obat_id, index) in Object.keys(this.d_picked_obats)">
                     <PenerimaanLine v-model="d_picked_obats[d_picked_obat_id]"
-                                          :key="d_picked_obat_id"
-                                          :error_data="error_data"
-                                          :index="index"/>
+                                    :key="d_picked_obat_id"
+                                    :error_data="error_data"
+                                    :index="index"/>
                 </template>
                 </tbody>
                 <tfoot>
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td class="uk-text-right"> Sub Total (Rp.): </td>
-                        <td class="uk-text-right">
-                            {{ currencyFormat(d_picked_obats_subtotal_sum) }}
-                        </td>
-                    </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="uk-text-right"> Sub Total (Rp.):</td>
+                    <td class="uk-text-right">
+                        {{ currencyFormat(d_picked_obats_subtotal_sum) }}
+                    </td>
+                </tr>
                 </tfoot>
             </table>
         </div>
 
         <div class="uk-margin uk-flex uk-flex-right">
-            <button type="submit" class="uk-button uk-button-primary">
+            <button type="submit"
+                    class="uk-button uk-button-primary">
                 Terima
             </button>
         </div>
@@ -82,8 +103,10 @@
 
 <script>
     import InvoicePembelianLine from "./InvoicePenjualanLine";
-    import {keyBy, toArray, pick} from "lodash";
+    import {keyBy, toArray, pick, get} from "lodash";
     import PenerimaanLine from "./PenerimaanLine";
+    import moment from "moment";
+    import modal from "../modal"
 
     export default {
         components: {
@@ -93,17 +116,15 @@
         },
 
         props: {
-            "obats": Array,
+            obats: Array,
             submit_url: String,
             redirect_url: String,
-        },
-
-        mounted() {
         },
 
         data() {
             return {
                 nama_supplier: null,
+                waktu_penerimaan: null,
                 error_data: null,
 
                 d_obat: null,
@@ -121,8 +142,8 @@
 
         watch: {
             d_obat(new_d_obat) {
-                if (new_d_obat === null) return
-                this.d_obat.picked = true
+                if (new_d_obat === null) return;
+                this.d_obat.picked = true;
                 this.d_obat = null
             },
         },
@@ -149,6 +170,7 @@
             form_data() {
                 return {
                     nama_supplier: this.nama_supplier,
+                    waktu_penerimaan: moment(this.waktu_penerimaan).format("YYYY-MM-DD HH:mm:ss"),
                     item_penerimaans: toArray(this.d_picked_obats)
                         .map(obat => pick(obat, ["id", "jumlah_obat", "harga_satuan_obat"]))
                 }
@@ -157,11 +179,17 @@
 
         methods: {
             onFormSubmit() {
-                axios.post(this.submit_url, this.form_data)
+                modal.confirmationModal()
+                    .then(result => {
+                        if (!result.value) throw new Error();
+                        return axios.post(this.submit_url, this.form_data)
+                    })
+                    .then(() => {
+                        window.location.replace(this.redirect_url)
+                    })
                     .catch(error => {
-                        this.error_data = error.response.data
-
-                        console.log(error)
+                        let error_data = get(error, "response.data", null);
+                        if (error_data) this.error_data = error_data;
                     })
             }
         }

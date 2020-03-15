@@ -19,6 +19,8 @@ class CreateItemPenerimaanTable extends Migration
             $table->unsignedInteger('obat_id')->index();
             $table->decimal("jumlah", 19, 4);
             $table->decimal("harga_satuan", 19, 4);
+            $table->dateTime("tanggal_kadaluarsa");
+
             $table->timestamps();
 
             $table->foreign('obat_id')->references('id')->on('obat');
