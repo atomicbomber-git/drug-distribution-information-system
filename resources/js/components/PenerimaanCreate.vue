@@ -64,6 +64,7 @@
                 <tr>
                     <th> #</th>
                     <th> Nama</th>
+                    <th class="uk-text-right"> Tanggal Kadaluarsa</th>
                     <th class="uk-text-right"> Jumlah</th>
                     <th class="uk-text-right"> Harga Satuan (Rp.)</th>
                     <th class="uk-text-right"> Sub Total (Rp.)</th>
@@ -103,7 +104,7 @@
 
 <script>
     import InvoicePembelianLine from "./InvoicePenjualanLine";
-    import {keyBy, toArray, pick, get} from "lodash";
+    import {get, keyBy, pick, toArray} from "lodash";
     import PenerimaanLine from "./PenerimaanLine";
     import moment from "moment";
     import modal from "../modal"
@@ -172,7 +173,11 @@
                     nama_supplier: this.nama_supplier,
                     waktu_penerimaan: moment(this.waktu_penerimaan).format("YYYY-MM-DD HH:mm:ss"),
                     item_penerimaans: toArray(this.d_picked_obats)
-                        .map(obat => pick(obat, ["id", "jumlah_obat", "harga_satuan_obat"]))
+                        .map(obat => pick(obat, ["id", "jumlah_obat", "harga_satuan_obat", "tanggal_kadaluarsa"]))
+                        .map(obat => ({
+                            ...obat,
+                            tanggal_kadaluarsa: moment(obat.tanggal_kadaluarsa).format("YYYY-MM-DD")
+                        }))
                 }
             }
         },

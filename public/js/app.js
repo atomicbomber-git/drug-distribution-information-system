@@ -2235,6 +2235,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -2301,7 +2302,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         nama_supplier: this.nama_supplier,
         waktu_penerimaan: moment__WEBPACK_IMPORTED_MODULE_3___default()(this.waktu_penerimaan).format("YYYY-MM-DD HH:mm:ss"),
         item_penerimaans: Object(lodash__WEBPACK_IMPORTED_MODULE_1__["toArray"])(this.d_picked_obats).map(function (obat) {
-          return Object(lodash__WEBPACK_IMPORTED_MODULE_1__["pick"])(obat, ["id", "jumlah_obat", "harga_satuan_obat"]);
+          return Object(lodash__WEBPACK_IMPORTED_MODULE_1__["pick"])(obat, ["id", "jumlah_obat", "harga_satuan_obat", "tanggal_kadaluarsa"]);
+        }).map(function (obat) {
+          return _objectSpread({}, obat, {
+            tanggal_kadaluarsa: moment__WEBPACK_IMPORTED_MODULE_3___default()(obat.tanggal_kadaluarsa).format("YYYY-MM-DD")
+          });
         })
       };
     }
@@ -2336,6 +2341,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_cleave_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-cleave-component */ "./node_modules/vue-cleave-component/dist/vue-cleave.min.js");
 /* harmony import */ var vue_cleave_component__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_cleave_component__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -82177,6 +82201,10 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v(" Nama")]),
         _vm._v(" "),
+        _c("th", { staticClass: "uk-text-right" }, [
+          _vm._v(" Tanggal Kadaluarsa")
+        ]),
+        _vm._v(" "),
         _c("th", { staticClass: "uk-text-right" }, [_vm._v(" Jumlah")]),
         _vm._v(" "),
         _c("th", { staticClass: "uk-text-right" }, [
@@ -82228,6 +82256,65 @@ var render = function() {
     _c("td", [_vm._v(" " + _vm._s(_vm.index + 1))]),
     _vm._v(" "),
     _c("td", [_vm._v(" " + _vm._s(_vm.value.nama))]),
+    _vm._v(" "),
+    _c("td", [
+      _c("div", { staticClass: "uk-margin" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.value.tanggal_kadaluarsa,
+              expression: "value.tanggal_kadaluarsa"
+            }
+          ],
+          staticClass: "uk-input",
+          class: {
+            "uk-form-danger": !!this.get(
+              _vm.error_data,
+              [
+                "errors",
+                "item_penerimaans." + _vm.index + ".tanggal_kadaluarsa",
+                0
+              ],
+              false
+            )
+          },
+          attrs: {
+            id: "tanggal_kadaluarsa",
+            placeholder: "Tanggal Kadaluarsa",
+            type: "date"
+          },
+          domProps: { value: _vm.value.tanggal_kadaluarsa },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.value, "tanggal_kadaluarsa", $event.target.value)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "uk-text-danger uk-text-small" }, [
+          _vm._v(
+            "\n                " +
+              _vm._s(
+                this.get(
+                  _vm.error_data,
+                  [
+                    "errors",
+                    "item_penerimaans." + _vm.index + ".tanggal_kadaluarsa",
+                    0
+                  ],
+                  ""
+                )
+              ) +
+              "\n            "
+          )
+        ])
+      ])
+    ]),
     _vm._v(" "),
     _c(
       "td",

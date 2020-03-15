@@ -2,6 +2,25 @@
     <tr>
         <td> {{ index + 1 }}</td>
         <td> {{ value.nama }}</td>
+
+        <td>
+            <div class="uk-margin">
+                <input
+                    id="tanggal_kadaluarsa"
+                    v-model="value.tanggal_kadaluarsa"
+                    placeholder="Tanggal Kadaluarsa"
+                    class="uk-input"
+                    :class="{
+                        'uk-form-danger': !!this.get(error_data, [`errors`, `item_penerimaans.${index}.tanggal_kadaluarsa`, 0], false)
+                    }"
+                    type="date"
+                >
+                <span class="uk-text-danger uk-text-small">
+                    {{ this.get(error_data, [`errors`, `item_penerimaans.${index}.tanggal_kadaluarsa`, 0], '')}}
+                </span>
+            </div>
+        </td>
+
         <td>
             <vue-cleave
                 class="uk-input uk-text-right"
@@ -23,7 +42,7 @@
             />
 
             <span class="uk-text-danger uk-text-small">
-                {{ this.get(error_data, [`errors`, `item_penerimaans.${index}.harga_satuan_obat`, 0], '')}}
+                {{ this.get(error_data, [`errors`, `item_penerimaans.${index}.harga_satuan_obat`, 0], '') }}
             </span>
         </td>
         <td class="uk-text-right">

@@ -1,17 +1,6 @@
 <?php
 
 return [
-    /*
-    |---------------------------------------------------------------------------------------
-    | Baris Bahasa untuk Validasi
-    |---------------------------------------------------------------------------------------
-    |
-    | Baris bahasa berikut ini berisi standar pesan kesalahan yang digunakan oleh
-    | kelas validasi. Beberapa aturan mempunyai multi versi seperti aturan 'size'.
-    | Jangan ragu untuk mengoptimalkan setiap pesan yang ada di sini.
-    |
-    */
-
     'accepted'             => 'Isian :attribute harus diterima.',
     'active_url'           => 'Isian :attribute bukan URL yang valid.',
     'after'                => 'Isian :attribute harus tanggal setelah :date.',
@@ -115,33 +104,11 @@ return [
     'url'                  => 'Format isian :attribute tidak valid.',
     'uuid'                 => 'The :attribute must be a valid UUID.',
 
-    /*
-    |---------------------------------------------------------------------------------------
-    | Baris Bahasa untuk Validasi Kustom
-    |---------------------------------------------------------------------------------------
-    |
-    | Di sini Anda dapat menentukan pesan validasi kustom untuk atribut dengan menggunakan
-    | konvensi "attribute.rule" dalam penamaan baris. Hal ini membuat cepat dalam
-    | menentukan spesifik baris bahasa kustom untuk aturan atribut yang diberikan.
-    |
-    */
-
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
     ],
-
-    /*
-    |---------------------------------------------------------------------------------------
-    | Kustom Validasi Atribut
-    |---------------------------------------------------------------------------------------
-    |
-    | Baris bahasa berikut digunakan untuk menukar atribut 'place-holders'
-    | dengan sesuatu yang lebih bersahabat dengan pembaca seperti Alamat Surel daripada
-    | "surel" saja. Ini benar-benar membantu kita membuat pesan sedikit bersih.
-    |
-    */
 
     'attributes' => [
         "description" => "deskripsi",
@@ -154,5 +121,6 @@ return [
         "author_last_name" => "nama belakang penulis",
         "jumlah_obat" => "jumlah obat",
         "harga_satuan_obat" => "harga satuan obat",
+        "tanggal_kadaluarsa" => "tanggal kadaluarsa",
     ],
 ];

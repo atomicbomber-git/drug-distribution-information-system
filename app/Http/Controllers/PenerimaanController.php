@@ -75,6 +75,7 @@ class PenerimaanController extends Controller
             "waktu_penerimaan" => "required|date_format:Y-m-d H:i:s",
             "item_penerimaans" => "required|array",
             "item_penerimaans.*.id" => "required|exists:obat",
+            "item_penerimaans.*.tanggal_kadaluarsa" => "required|date",
             "item_penerimaans.*.jumlah_obat" => "required|numeric|gt:0",
             "item_penerimaans.*.harga_satuan_obat" => "required|numeric|gte:0",
         ]);
@@ -92,6 +93,7 @@ class PenerimaanController extends Controller
                 ->create([
                     "penerimaan_id" => $penerimaan->id,
                     "obat_id" => $item_penerimaan["id"],
+                    "tanggal_kadaluarsa" => $item_penerimaan["tanggal_kadaluarsa"],
                     "jumlah" => $item_penerimaan["jumlah_obat"],
                     "harga_satuan" => $item_penerimaan["harga_satuan_obat"],
                 ]);
