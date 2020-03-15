@@ -9,6 +9,10 @@
                 v-model.number="value.jumlah_obat"
                 :options="{ numeral: true }"
             />
+
+            <span class="uk-text-danger uk-text-small">
+                {{ this.get(error_data, [`errors`, `item_penerimaans.${index}.jumlah_obat`, 0], '')}}
+            </span>
         </td>
         <td>
             <vue-cleave
@@ -17,6 +21,10 @@
                 v-model.number="value.harga_satuan_obat"
                 :options="{ numeral: true }"
             />
+
+            <span class="uk-text-danger uk-text-small">
+                {{ this.get(error_data, [`errors`, `item_penerimaans.${index}.harga_satuan_obat`, 0], '')}}
+            </span>
         </td>
         <td class="uk-text-right">
             {{ currencyFormat(sub_total) }}

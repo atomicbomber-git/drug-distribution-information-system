@@ -34,12 +34,12 @@
             </Multiselect>
 
             <span class="uk-text-danger uk-text-small">
-                {{ this.get(error_data, 'errors.obat[0]', '')}}
+                {{ this.get(error_data, 'errors.item_penerimaans[0]', '')}}
             </span>
         </div>
 
         <div class="uk-margin uk-text-small">
-            <table class="uk-table uk-table-small uk-table-striped uk-table-middle">
+            <table class="uk-table uk-table-small uk-table-striped">
                 <thead>
                 <tr>
                     <th> #</th>
@@ -159,6 +159,8 @@
             onFormSubmit() {
                 axios.post(this.submit_url, this.form_data)
                     .catch(error => {
+                        this.error_data = error.response.data
+
                         console.log(error)
                     })
             }

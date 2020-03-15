@@ -152,5 +152,7 @@ return [
         "content" => "isi",
         "author_first_name" => "nama depan penulis",
         "author_last_name" => "nama belakang penulis",
+        "jumlah_obat" => "jumlah obat",
+        "harga_satuan_obat" => "harga satuan obat",
     ],
 ];

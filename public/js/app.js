@@ -2281,7 +2281,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   methods: {
     onFormSubmit: function onFormSubmit() {
+      var _this2 = this;
+
       axios.post(this.submit_url, this.form_data)["catch"](function (error) {
+        _this2.error_data = error.response.data;
         console.log(error);
       });
     }
@@ -2301,6 +2304,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_cleave_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-cleave-component */ "./node_modules/vue-cleave-component/dist/vue-cleave.min.js");
 /* harmony import */ var vue_cleave_component__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_cleave_component__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -61333,7 +61344,9 @@ var render = function() {
           _c("span", { staticClass: "uk-text-danger uk-text-small" }, [
             _vm._v(
               "\n            " +
-                _vm._s(this.get(_vm.error_data, "errors.obat[0]", "")) +
+                _vm._s(
+                  this.get(_vm.error_data, "errors.item_penerimaans[0]", "")
+                ) +
                 "\n        "
             )
           ])
@@ -61344,10 +61357,7 @@ var render = function() {
       _c("div", { staticClass: "uk-margin uk-text-small" }, [
         _c(
           "table",
-          {
-            staticClass:
-              "uk-table uk-table-small uk-table-striped uk-table-middle"
-          },
+          { staticClass: "uk-table uk-table-small uk-table-striped" },
           [
             _vm._m(0),
             _vm._v(" "),
@@ -61485,7 +61495,25 @@ var render = function() {
             },
             expression: "value.jumlah_obat"
           }
-        })
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "uk-text-danger uk-text-small" }, [
+          _vm._v(
+            "\n            " +
+              _vm._s(
+                this.get(
+                  _vm.error_data,
+                  [
+                    "errors",
+                    "item_penerimaans." + _vm.index + ".jumlah_obat",
+                    0
+                  ],
+                  ""
+                )
+              ) +
+              "\n        "
+          )
+        ])
       ],
       1
     ),
@@ -61503,7 +61531,25 @@ var render = function() {
             },
             expression: "value.harga_satuan_obat"
           }
-        })
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "uk-text-danger uk-text-small" }, [
+          _vm._v(
+            "\n            " +
+              _vm._s(
+                this.get(
+                  _vm.error_data,
+                  [
+                    "errors",
+                    "item_penerimaans." + _vm.index + ".harga_satuan_obat",
+                    0
+                  ],
+                  ""
+                )
+              ) +
+              "\n        "
+          )
+        ])
       ],
       1
     ),
