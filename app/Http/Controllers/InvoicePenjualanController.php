@@ -6,7 +6,9 @@ use App\Constants\MessageState;
 use App\GlobalHelpers\Formatter;
 use App\InvoicePenjualan;
 use App\Obat;
+use App\Stock;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
 
 class InvoicePenjualanController extends Controller
@@ -38,6 +40,21 @@ class InvoicePenjualanController extends Controller
     public function create()
     {
         $obats = Obat::query()
+            ->select(
+                "obat.id",
+                "nama",
+                "total_jumlah"
+            )
+            ->leftJoinSub(
+                Stock::query()
+                    ->select(
+                        "obat_id",
+                        DB::raw("SUM(jumlah) AS total_jumlah")
+                    )
+                    ->groupBy("obat_id")
+                , "stock_sum",
+                "obat.id", "=", "stock_sum.obat_id"
+            )
             ->orderBy("nama")
             ->get();
 

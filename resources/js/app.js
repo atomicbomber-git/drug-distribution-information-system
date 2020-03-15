@@ -23,7 +23,7 @@ Vue.component('penerimaan-edit',require("./components/PenerimaanEdit.vue").defau
 Vue.mixin({
     methods: {
         get: require("lodash").get,
-        currencyFormat: require("./numeralHelper").currencyFormat
+        ...require("./numeralHelper")
     }
 });
 

@@ -29,7 +29,7 @@
                 id="obat"
                 v-model="d_obat"
                 :options="this.d_unpicked_obats"
-                :custom-label="({ nama }) => nama"
+                :custom-label="({ nama, total_jumlah }) => `${nama} (Stock: ${total_jumlah})`"
             >
             </Multiselect>
 
@@ -45,10 +45,14 @@
                 <tr>
                     <th> #</th>
                     <th> Nama</th>
-                    <th> Jumlah</th>
-                    <th> Harga Satuan (Rp.)</th>
-                    <th> Diskon Grosir (%)</th>
-                    <th> Sub Total</th>
+                    <th class="uk-text-right"> Stock</th>
+                    <th class="uk-text-right"> Jumlah</th>
+                    <th class="uk-text-right"> Harga Satuan (Rp.)</th>
+                    <th class="uk-text-right"> Diskon Grosir (%)</th>
+                    <th class="uk-text-right"> Sub Total</th>
+                    <th class="uk-text-center">
+                        <i class="fas fa-wrench"></i>
+                    </th>
                 </tr>
                 </thead>
 
@@ -57,9 +61,24 @@
                     <InvoicePembelianLine v-model="d_picked_obats[d_picked_obat_id]"
                                           :key="d_picked_obat_id"
                                           :error_data="error_data"
-                                          :index="index"/>
+                                          :index="index"
+                                          @item-remove="id => { d_picked_obats[id].picked = false }"
+                    />
                 </template>
                 </tbody>
+                <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="uk-text-right"> Sub Total (Rp.):</td>
+                    <td class="uk-text-right">
+                        {{ currencyFormat(d_picked_obats_subtotal_sum) }}
+                    </td>
+                </tr>
+                </tfoot>
             </table>
         </div>
 
@@ -69,6 +88,7 @@
 <script>
     import InvoicePembelianLine from "./InvoicePenjualanLine";
     import {keyBy} from "lodash";
+    import numeral from "numeral";
 
     export default {
         components: {
@@ -94,12 +114,15 @@
                 d_obats: this.obats.map(obat => ({
                     ...obat,
 
+                    total_jumlah: numeral(obat.total_jumlah).format("0.[0000]"),
                     jumlah_obat: 0,
                     harga_satuan_obat: 0,
                     diskon_grosir: 0,
 
                     picked: false,
-                }))
+                })),
+
+                d_picked_obats_subtotal_sum: 0,
             }
         },
 
@@ -108,6 +131,17 @@
                 if (new_d_obat === null) return
                 this.d_obat.picked = true
                 this.d_obat = null
+            },
+
+            d_obats: {
+                deep: true,
+                handler: function () {
+                    this.d_picked_obats_subtotal_sum = Object.keys(this.d_picked_obats)
+                        .map(key => this.d_picked_obats[key])
+                        .reduce((curr, next) => {
+                            return curr + (next.sub_total ?? 0)
+                        }, 0)
+                }
             }
         },
 
@@ -122,7 +156,7 @@
                     this.d_obats.filter(({picked}) => picked),
                     "id"
                 )
-            }
+            },
         },
 
         methods: {

@@ -1911,6 +1911,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _InvoicePenjualanLine__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InvoicePenjualanLine */ "./resources/js/components/InvoicePenjualanLine.vue");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var numeral__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! numeral */ "./node_modules/numeral/numeral.js");
+/* harmony import */ var numeral__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(numeral__WEBPACK_IMPORTED_MODULE_2__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -1985,6 +1987,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2005,12 +2027,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       d_obat: null,
       d_obats: this.obats.map(function (obat) {
         return _objectSpread({}, obat, {
+          total_jumlah: numeral__WEBPACK_IMPORTED_MODULE_2___default()(obat.total_jumlah).format("0.[0000]"),
           jumlah_obat: 0,
           harga_satuan_obat: 0,
           diskon_grosir: 0,
           picked: false
         });
-      })
+      }),
+      d_picked_obats_subtotal_sum: 0
     };
   },
   watch: {
@@ -2018,6 +2042,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (new_d_obat === null) return;
       this.d_obat.picked = true;
       this.d_obat = null;
+    },
+    d_obats: {
+      deep: true,
+      handler: function handler() {
+        var _this = this;
+
+        this.d_picked_obats_subtotal_sum = Object.keys(this.d_picked_obats).map(function (key) {
+          return _this.d_picked_obats[key];
+        }).reduce(function (curr, next) {
+          var _next$sub_total;
+
+          return curr + ((_next$sub_total = next.sub_total) !== null && _next$sub_total !== void 0 ? _next$sub_total : 0);
+        }, 0);
+      }
     }
   },
   computed: {
@@ -2087,6 +2125,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'InvoicePenjualanLine',
   props: {
@@ -2094,16 +2141,36 @@ __webpack_require__.r(__webpack_exports__);
     error_data: {},
     index: {}
   },
+  mounted: function mounted() {
+    this.value.sub_total = this.sub_total;
+  },
+  methods: {
+    onItemRemove: function onItemRemove() {
+      this.$emit("item-remove", this.value.id);
+    }
+  },
   watch: {
     "value.diskon_grosir": function valueDiskon_grosir(new_diskon_grosir) {
       if (new_diskon_grosir > 15) {
         this.value.diskon_grosir = 15;
       }
+    },
+    sub_total: function sub_total(new_sub_total) {
+      this.value.sub_total = new_sub_total;
+    },
+    value: {
+      handler: function handler() {
+        this.$emit('input', this.value);
+      },
+      deep: true
     }
   },
   computed: {
+    sub_total_without_discount: function sub_total_without_discount() {
+      return (this.value.jumlah_obat || 0) * (this.value.harga_satuan_obat || 0);
+    },
     sub_total: function sub_total() {
-      return this.value.jumlah_obat + this.value.harga_satuan_obat + this.value.diskon_grosir;
+      return this.sub_total_without_discount * ((100 - this.value.diskon_grosir) / 100);
     }
   }
 });
@@ -81976,8 +82043,9 @@ var render = function() {
               options: this.d_unpicked_obats,
               "custom-label": function(ref) {
                 var nama = ref.nama
+                var total_jumlah = ref.total_jumlah
 
-                return nama
+                return nama + " (Stock: " + total_jumlah + ")"
               }
             },
             model: {
@@ -82021,6 +82089,11 @@ var render = function() {
                     _c("InvoicePembelianLine", {
                       key: d_picked_obat_id,
                       attrs: { error_data: _vm.error_data, index: index },
+                      on: {
+                        "item-remove": function(id) {
+                          _vm.d_picked_obats[id].picked = false
+                        }
+                      },
                       model: {
                         value: _vm.d_picked_obats[d_picked_obat_id],
                         callback: function($$v) {
@@ -82033,7 +82106,35 @@ var render = function() {
                 })
               ],
               2
-            )
+            ),
+            _vm._v(" "),
+            _c("tfoot", [
+              _c("tr", [
+                _c("td"),
+                _vm._v(" "),
+                _c("td"),
+                _vm._v(" "),
+                _c("td"),
+                _vm._v(" "),
+                _c("td"),
+                _vm._v(" "),
+                _c("td"),
+                _vm._v(" "),
+                _c("td", { staticClass: "uk-text-right" }, [
+                  _vm._v(" Sub Total (Rp.):")
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "uk-text-right" }, [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(
+                        _vm.currencyFormat(_vm.d_picked_obats_subtotal_sum)
+                      ) +
+                      "\n                "
+                  )
+                ])
+              ])
+            ])
           ]
         )
       ])
@@ -82051,13 +82152,23 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v(" Nama")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" Jumlah")]),
+        _c("th", { staticClass: "uk-text-right" }, [_vm._v(" Stock")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" Harga Satuan (Rp.)")]),
+        _c("th", { staticClass: "uk-text-right" }, [_vm._v(" Jumlah")]),
         _vm._v(" "),
-        _c("th", [_vm._v(" Diskon Grosir (%)")]),
+        _c("th", { staticClass: "uk-text-right" }, [
+          _vm._v(" Harga Satuan (Rp.)")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v(" Sub Total")])
+        _c("th", { staticClass: "uk-text-right" }, [
+          _vm._v(" Diskon Grosir (%)")
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "uk-text-right" }, [_vm._v(" Sub Total")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "uk-text-center" }, [
+          _c("i", { staticClass: "fas fa-wrench" })
+        ])
       ])
     ])
   }
@@ -82088,6 +82199,10 @@ var render = function() {
     _vm._v(" "),
     _c("td", [_vm._v(" " + _vm._s(_vm.value.nama))]),
     _vm._v(" "),
+    _c("td", { staticClass: "uk-text-right" }, [
+      _vm._v(" " + _vm._s(_vm.quantityFormat(_vm.value.total_jumlah)))
+    ]),
+    _vm._v(" "),
     _c("td", [
       _c("input", {
         directives: [
@@ -82099,7 +82214,7 @@ var render = function() {
             modifiers: { number: true }
           }
         ],
-        staticClass: "uk-input",
+        staticClass: "uk-input uk-text-right",
         class: {
           "uk-form-danger": !!_vm.get(_vm.error_data, "errors.jumlah[0]", false)
         },
@@ -82130,7 +82245,7 @@ var render = function() {
             modifiers: { number: true }
           }
         ],
-        staticClass: "uk-input",
+        staticClass: "uk-input uk-text-right",
         class: {
           "uk-form-danger": !!_vm.get(
             _vm.error_data,
@@ -82169,7 +82284,7 @@ var render = function() {
             modifiers: { number: true }
           }
         ],
-        staticClass: "uk-input",
+        staticClass: "uk-input uk-text-right",
         class: {
           "uk-form-danger": !!_vm.get(
             _vm.error_data,
@@ -82193,7 +82308,27 @@ var render = function() {
       })
     ]),
     _vm._v(" "),
-    _c("td", [_vm._v("\n        " + _vm._s(_vm.sub_total) + "\n    ")])
+    _c("td", { staticClass: "uk-text-right" }, [
+      _vm._v(
+        "\n        " + _vm._s(_vm.currencyFormat(this.sub_total)) + "\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c("td", { staticClass: "uk-text-center" }, [
+      _c(
+        "button",
+        {
+          staticClass: "uk-button uk-button-danger uk-button-small",
+          attrs: { type: "button" },
+          on: {
+            click: function($event) {
+              return _vm.onItemRemove()
+            }
+          }
+        },
+        [_c("i", { staticClass: "fas fa-trash" })]
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -95105,6 +95240,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var uikit__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(uikit__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var uikit_dist_js_uikit_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! uikit/dist/js/uikit-icons */ "./node_modules/uikit/dist/js/uikit-icons.js");
 /* harmony import */ var uikit_dist_js_uikit_icons__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(uikit_dist_js_uikit_icons__WEBPACK_IMPORTED_MODULE_1__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -95123,10 +95264,9 @@ Vue.component('invoice-penjualan-create', __webpack_require__(/*! ./components/I
 Vue.component('penerimaan-create', __webpack_require__(/*! ./components/PenerimaanCreate.vue */ "./resources/js/components/PenerimaanCreate.vue")["default"]);
 Vue.component('penerimaan-edit', __webpack_require__(/*! ./components/PenerimaanEdit.vue */ "./resources/js/components/PenerimaanEdit.vue")["default"]);
 Vue.mixin({
-  methods: {
-    get: __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js").get,
-    currencyFormat: __webpack_require__(/*! ./numeralHelper */ "./resources/js/numeralHelper.js").currencyFormat
-  }
+  methods: _objectSpread({
+    get: __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js").get
+  }, __webpack_require__(/*! ./numeralHelper */ "./resources/js/numeralHelper.js"))
 });
 var app = new Vue({
   el: '#app'
@@ -95564,17 +95704,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /*!***************************************!*\
   !*** ./resources/js/numeralHelper.js ***!
   \***************************************/
-/*! exports provided: currencyFormat */
+/*! exports provided: currencyFormat, quantityFormat */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "currencyFormat", function() { return currencyFormat; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "quantityFormat", function() { return quantityFormat; });
 /* harmony import */ var numeral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! numeral */ "./node_modules/numeral/numeral.js");
 /* harmony import */ var numeral__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(numeral__WEBPACK_IMPORTED_MODULE_0__);
 
 function currencyFormat(value) {
   return numeral__WEBPACK_IMPORTED_MODULE_0___default()(value).format("0,0.00");
+}
+function quantityFormat(value) {
+  return numeral__WEBPACK_IMPORTED_MODULE_0___default()(value).format("0,0.[00]");
 }
 
 /***/ }),
