@@ -4,32 +4,43 @@
         <td> {{ value.nama }}</td>
         <td class="uk-text-right"> {{ quantityFormat(value.total_jumlah) }}</td>
         <td>
-            <input
+            <vue-cleave
+                class="uk-input uk-text-right"
+                :class="{ 'uk-form-danger': this.get(error_data, [`errors`, `item_penjualans.${index}.jumlah_obat`, 0], false) }"
+                placeholder="Jumlah Obat"
                 v-model.number="value.jumlah_obat"
-                placeholder="Jumlah"
-                class="uk-input uk-text-right"
-                :class="{'uk-form-danger': !!(get(error_data, 'errors.jumlah[0]', false))}"
-                type="number"
-            >
+                :options="{ numeral: true }"
+            />
+
+            <span class="uk-text-danger uk-text-small">
+                {{ this.get(error_data, [`errors`, `item_penjualans.${index}.jumlah_obat`, 0], '')}}
+            </span>
         </td>
         <td>
-            <input
-                v-model.number="value.harga_satuan_obat"
+            <vue-cleave
+                class="uk-input uk-text-right"
+                :class="{ 'uk-form-danger': this.get(error_data, [`errors`, `item_penjualans.${index}.harga_satuan_obat`, 0], false) }"
                 placeholder="Harga Satuan"
-                class="uk-input uk-text-right"
-                :class="{'uk-form-danger': !!(get(error_data, 'errors.harga_satuan[0]', false))}"
-                type="number"
-            >
+                v-model.number="value.harga_satuan_obat"
+                :options="{ numeral: true }"
+            />
+
+            <span class="uk-text-danger uk-text-small">
+                {{ this.get(error_data, [`errors`, `item_penjualans.${index}.harga_satuan`, 0], '')}}
+            </span>
         </td>
         <td>
-            <input
-                max="15"
-                v-model.number="value.diskon_grosir"
-                placeholder="Diskon Grosir"
+            <vue-cleave
                 class="uk-input uk-text-right"
-                :class="{'uk-form-danger': !!(get(error_data, 'errors.diskon_grosir[0]', false))}"
-                type="number"
-            >
+                :class="{ 'uk-form-danger': this.get(error_data, [`errors`, `item_penjualans.${index}.diskon_grosir`, 0], false) }"
+                placeholder=""
+                v-model.number="value.diskon_grosir"
+                :options="{ numeral: true }"
+            />
+
+            <span class="uk-text-danger uk-text-small">
+                {{ this.get(error_data, [`errors`, `item_penjualans.${index}.diskon_grosir`, 0], '')}}
+            </span>
         </td>
         <td class="uk-text-right">
             {{ currencyFormat(this.sub_total) }}
@@ -45,8 +56,12 @@
     </tr>
 </template>
 <script>
+    import VueCleave from "vue-cleave-component";
+
     export default {
         name: 'InvoicePenjualanLine',
+        components: { VueCleave },
+
         props: {
             value: {},
             error_data: {},

@@ -1,10 +1,13 @@
 require('./bootstrap');
-
 import UIkit from 'uikit';
-import Icons from 'uikit/dist/js/uikit-icons';
 
 // loads the Icon plugin
+import Icons from 'uikit/dist/js/uikit-icons';
 UIkit.use(Icons);
+
+// vue-datetime localization settings
+import { Settings } from 'luxon'
+Settings.defaultLocale = 'id';
 
 // Datatable
 window.$ = window.jQuery = require('jquery');

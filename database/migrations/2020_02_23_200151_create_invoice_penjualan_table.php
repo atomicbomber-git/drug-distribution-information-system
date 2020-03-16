@@ -15,8 +15,8 @@ class CreateInvoicePenjualanTable extends Migration
     {
         Schema::create('invoice_penjualan', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama_perusahaan');
-            $table->dateTime('waktu_penerimaan');
+            $table->string('nama_customer');
+            $table->dateTime('waktu_penjualan');
             $table->decimal('persentase_diskon_cash', 19, 4);
             $table->decimal('persentase_pajak', 19, 4);
             $table->timestamps();

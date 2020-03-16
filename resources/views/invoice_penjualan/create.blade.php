@@ -3,7 +3,7 @@
 @section("content")
     <h1 class="uk-text-bolder">
         <i class="fas fa-plus-circle"></i>
-        Invoice Pembelian Baru
+        Invoice Penjualan Baru
     </h1>
 
     @include('layouts._messages')

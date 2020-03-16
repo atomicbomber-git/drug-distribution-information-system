@@ -1,22 +1,39 @@
 <template>
     <form @submit.prevent="onFormSubmit">
         <div class="uk-margin">
-            <label for="nama_perusahaan"
-                   class="uk-form-label"> Nama Perusahaan
+            <label for="nama_customer"
+                   class="uk-form-label"> Nama Customer
             </label>
 
             <input
-                id="nama_perusahaan"
-                v-model="nama_perusahaan"
-                placeholder="Nama Perusahaan"
+                id="nama_customer"
+                v-model="nama_customer"
+                placeholder="Nama Customer"
                 class="uk-input"
                 :class="{
-                    'uk-form-danger': !!this.get(error_data, 'errors.nama_perusahaan[0]', false)
+                    'uk-form-danger': !!this.get(error_data, 'errors.nama_customer[0]', false)
                 }"
                 type="text"
             >
             <span class="uk-text-danger uk-text-small">
-                {{ this.get(error_data, 'errors.nama_perusahaan[0]', '')}}
+                {{ this.get(error_data, 'errors.nama_customer[0]', '')}}
+            </span>
+        </div>
+
+        <div class="uk-margin">
+            <label for="waktu_penjualan"
+                   class="uk-form-label"> Waktu Penjualan
+            </label>
+
+            <datetime
+                id="waktu_penjualan"
+                :input-class="{'uk-input': true, 'uk-form-danger': get(this.error_data, 'errors.waktu_penjualan', false)}"
+                placeholder="Waktu Mulai"
+                type="datetime"
+                v-model="waktu_penjualan"></datetime>
+
+            <span class="uk-text-danger uk-text-small">
+                {{ this.get(error_data, 'errors.waktu_penjualan[0]', '')}}
             </span>
         </div>
 
@@ -49,7 +66,7 @@
                     <th class="uk-text-right"> Jumlah</th>
                     <th class="uk-text-right"> Harga Satuan (Rp.)</th>
                     <th class="uk-text-right"> Diskon Grosir (%)</th>
-                    <th class="uk-text-right"> Sub Total</th>
+                    <th class="uk-text-right"> Sub Total (Rp.)</th>
                     <th class="uk-text-center">
                         <i class="fas fa-wrench"></i>
                     </th>
@@ -82,22 +99,34 @@
             </table>
         </div>
 
+        <div class="uk-margin uk-flex uk-flex-right">
+            <button @click.prevent="onFormSubmit"
+                    class="uk-button uk-button-primary"
+                    type="submit">
+                Submit
+            </button>
+        </div>
     </form>
 </template>
 
 <script>
     import InvoicePembelianLine from "./InvoicePenjualanLine";
-    import {keyBy} from "lodash";
+    import {keyBy, pick, toArray} from "lodash";
     import numeral from "numeral";
+    import moment from "moment";
+    import {Datetime} from 'vue-datetime';
 
     export default {
         components: {
             InvoicePembelianLine,
-            Multiselect: require("vue-multiselect").Multiselect
+            Multiselect: require("vue-multiselect").Multiselect,
+            Datetime,
         },
 
         props: {
-            "obats": Array,
+            obats: Array,
+            submit_url: String,
+            redirect_url: String,
         },
 
         mounted() {
@@ -105,9 +134,8 @@
 
         data() {
             return {
-                submit_url: null,
-                redirect_url: null,
-                nama_perusahaan: null,
+                nama_customer: null,
+                waktu_penjualan: null,
                 error_data: null,
 
                 d_obat: null,
@@ -157,10 +185,20 @@
                     "id"
                 )
             },
+
+            form_data() {
+                return {
+                    nama_customer: this.nama_customer,
+                    waktu_penjualan: moment(this.waktu_penjualan).format("YYYY-MM-DD HH:mm:ss"),
+                    item_penerimaans: toArray(this.d_picked_obats)
+                        .map(obat => pick(obat, ["id", "jumlah_obat", "harga_satuan_obat", "diskon_grosir"]))
+                }
+            }
         },
 
         methods: {
             onFormSubmit() {
+
             }
         }
     }

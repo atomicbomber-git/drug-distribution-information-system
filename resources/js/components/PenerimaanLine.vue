@@ -24,6 +24,7 @@
         <td>
             <vue-cleave
                 class="uk-input uk-text-right"
+                :class="{ 'uk-form-danger': this.get(error_data, [`errors`, `item_penerimaans.${index}.jumlah_obat`, 0], false) }"
                 placeholder="Jumlah Obat"
                 v-model.number="value.jumlah_obat"
                 :options="{ numeral: true }"

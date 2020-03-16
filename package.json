@@ -17,6 +17,7 @@
         "jquery": "^3.2",
         "laravel-mix": "^5.0.1",
         "lodash": "^4.17.13",
+        "luxon": "^1.22.0",
         "moment": "^2.24.0",
         "numeral": "^2.0.6",
         "popper.js": "^1.12",
@@ -27,7 +28,9 @@
         "uikit": "^3.3.2",
         "vue": "^2.5.17",
         "vue-cleave-component": "^2.1.3",
+        "vue-datetime": "^1.0.0-beta.11",
         "vue-multiselect": "^2.1.6",
-        "vue-template-compiler": "^2.6.10"
+        "vue-template-compiler": "^2.6.10",
+        "weekstart": "^1.0.1"
     }
 }
