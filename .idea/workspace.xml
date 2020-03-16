@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb6f9944-727a-45d8-964b-1170f91ba173" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/atomicbomber.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/atomicbomber.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/InvoicePenjualanFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/InvoicePenjualanFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_23_200151_create_invoice_penjualan_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_23_200151_create_invoice_penjualan_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoicePenjualanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoicePenjualanController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/InvoicePenjualanCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/InvoicePenjualanCreate.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/InvoicePenjualanLine.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/InvoicePenjualanLine.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/PenerimaanLine.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/PenerimaanLine.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoice_penjualan/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoice_penjualan/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +51,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="ddis: schema" type="ebfa3cd1:MariaImplModel$Schema" />
         <item name="invoice_penjualan: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ddis@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ddis: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="item_invoice_penjualan: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -211,7 +207,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/stock_gabungan" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
@@ -281,7 +277,7 @@
       <workItem from="1583407174062" duration="129000" />
       <workItem from="1584187704655" duration="7183000" />
       <workItem from="1584237317177" duration="29774000" />
-      <workItem from="1584319406027" duration="2272000" />
+      <workItem from="1584319406027" duration="3149000" />
     </task>
     <servers />
   </component>
@@ -373,16 +369,16 @@
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="629" y="325" width="953" height="424" key="NewPhpClassDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1584259771897" />
-    <state x="454" y="159" key="SettingsEditor" timestamp="1584258968838">
+    <state x="454" y="159" key="SettingsEditor" timestamp="1584321883691">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="323" y="12" key="SettingsEditor/0.0.1366.742@0.0.1366.742" timestamp="1582466876205" />
-    <state x="454" y="159" key="SettingsEditor/0.0.1920.1053@0.0.1920.1053" timestamp="1584258968838" />
-    <state x="679" y="260" width="660" height="540" key="StructurePopup" timestamp="1584320597733">
+    <state x="454" y="159" key="SettingsEditor/0.0.1920.1053@0.0.1920.1053" timestamp="1584321883691" />
+    <state x="679" y="260" width="660" height="540" key="StructurePopup" timestamp="1584322026632">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="483" y="183" width="810" height="381" key="StructurePopup/0.0.1366.742@0.0.1366.742" timestamp="1582527514731" />
-    <state x="679" y="260" width="660" height="540" key="StructurePopup/0.0.1920.1053@0.0.1920.1053" timestamp="1584320597733" />
+    <state x="679" y="260" width="660" height="540" key="StructurePopup/0.0.1920.1053@0.0.1920.1053" timestamp="1584322026632" />
     <state x="619" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1584237320107">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
@@ -396,10 +392,10 @@
     </state>
     <state x="437" y="169" key="run.anything.popup/0.0.1366.742@0.0.1366.742" timestamp="1582527360542" />
     <state x="614" y="240" width="672" height="680" key="run.anything.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1584288149603" />
-    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1584321397635">
+    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1584322638373">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="436" y="163" width="672" height="478" key="search.everywhere.popup/0.0.1366.742@0.0.1366.742" timestamp="1582468709653" />
-    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1584321397635" />
+    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1584322638373" />
   </component>
 </project>

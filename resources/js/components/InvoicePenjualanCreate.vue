@@ -115,6 +115,7 @@
     import numeral from "numeral";
     import moment from "moment";
     import {Datetime} from 'vue-datetime';
+    import modal from "../modal"
 
     export default {
         components: {
@@ -190,7 +191,7 @@
                 return {
                     nama_customer: this.nama_customer,
                     waktu_penjualan: moment(this.waktu_penjualan).format("YYYY-MM-DD HH:mm:ss"),
-                    item_penerimaans: toArray(this.d_picked_obats)
+                    item_penjualans: toArray(this.d_picked_obats)
                         .map(obat => pick(obat, ["id", "jumlah_obat", "harga_satuan_obat", "diskon_grosir"]))
                 }
             }
@@ -198,7 +199,18 @@
 
         methods: {
             onFormSubmit() {
-
+                modal.confirmationModal()
+                    .then(result => {
+                        if (!result.value) throw new Error();
+                        return axios.post(this.submit_url, this.form_data)
+                    })
+                    .then(() => {
+                        window.location.replace(this.redirect_url)
+                    })
+                    .catch(error => {
+                        let error_data = get(error, "response.data", null);
+                        if (error_data) this.error_data = error_data;
+                    })
             }
         }
     }

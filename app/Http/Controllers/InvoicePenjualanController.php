@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Constants\MessageState;
 use App\GlobalHelpers\Formatter;
 use App\InvoicePenjualan;
+use App\ItemInvoicePenjualan;
 use App\Obat;
 use App\Stock;
 use Illuminate\Http\Request;
@@ -24,8 +25,7 @@ class InvoicePenjualanController extends Controller
             return DataTables::eloquent(InvoicePenjualan::query())
                 ->addIndexColumn()
                 ->editColumn("waktu_penerimaan", fn($invoice_penjualan) => Formatter::fancyDatetime($invoice_penjualan->waktu_penerimaan))
-                ->addColumn("controls", fn($invoice_penjualan) => view("invoice_penjualan._index_controls", compact("invoice_penjualan"))
-                )
+                ->addColumn("controls", fn($invoice_penjualan) => view("invoice_penjualan._index_controls", compact("invoice_penjualan")))
                 ->toJson();
         }
 
@@ -71,7 +71,38 @@ class InvoicePenjualanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            "nama_customer" => "required|string",
+            "waktu_penjualan" => "required|date_format:Y-m-d H:i:s",
+            "item_penjualans" => "required|array",
+            "item_penjualans.*.id" => "required|exists:obat",
+            "item_penjualans.*.jumlah_obat" => "required|gt:0",
+            "item_penjualans.*.harga_satuan_obat" => "required|gte:0",
+            "item_penjualans.*.diskon_grosir" => "required|gte:1|lte:15",
+        ]);
+
+        DB::beginTransaction();
+
+        $invoice_penjualan = InvoicePenjualan::query()->create([
+            "nama_customer" => $data["nama_customer"],
+            "waktu_penjualan" => $data["waktu_penjualan"],
+            "persentase_pajak" => 0.1,
+            "persentase_diskon_cash" => 0.03,
+        ]);
+
+        foreach ($data["item_penjualans"] as $data_item_penjualan) {
+            ItemInvoicePenjualan::query()->create([
+                "invoice_id" => $invoice_penjualan,
+                "obat_id" => $data["obat_id"],
+                "jumlah_obat" => $data["jumlah_obat"],
+                "harga_satuan_obat" => $data["harga_satuan_obat"],
+                "persentase_diskon_grosir" => $data["diskon_grosir"] / 100,
+            ]);
+        }
+
+        DB::commit();
+
+        return response($data, 400);
     }
 
     /**
@@ -123,8 +154,7 @@ class InvoicePenjualanController extends Controller
                 "state" => MessageState::STATE_SUCCESS,
                 "content" => __("messages.delete.success")
             ]);
-        }
-        catch (\Throwable $exception) {
+        } catch (\Throwable $exception) {
             $messages->add([
                 "state" => MessageState::STATE_DANGER,
                 "content" => __("messages.delete.failure")

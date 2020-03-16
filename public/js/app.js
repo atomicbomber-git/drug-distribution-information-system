@@ -1917,6 +1917,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var vue_datetime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-datetime */ "./node_modules/vue-datetime/dist/vue-datetime.js");
 /* harmony import */ var vue_datetime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_datetime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modal */ "./resources/js/modal.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -2039,6 +2040,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     InvoicePembelianLine: _InvoicePenjualanLine__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -2107,14 +2109,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return {
         nama_customer: this.nama_customer,
         waktu_penjualan: moment__WEBPACK_IMPORTED_MODULE_3___default()(this.waktu_penjualan).format("YYYY-MM-DD HH:mm:ss"),
-        item_penerimaans: Object(lodash__WEBPACK_IMPORTED_MODULE_1__["toArray"])(this.d_picked_obats).map(function (obat) {
+        item_penjualans: Object(lodash__WEBPACK_IMPORTED_MODULE_1__["toArray"])(this.d_picked_obats).map(function (obat) {
           return Object(lodash__WEBPACK_IMPORTED_MODULE_1__["pick"])(obat, ["id", "jumlah_obat", "harga_satuan_obat", "diskon_grosir"]);
         })
       };
     }
   },
   methods: {
-    onFormSubmit: function onFormSubmit() {}
+    onFormSubmit: function onFormSubmit() {
+      var _this2 = this;
+
+      _modal__WEBPACK_IMPORTED_MODULE_5__["default"].confirmationModal().then(function (result) {
+        if (!result.value) throw new Error();
+        return axios.post(_this2.submit_url, _this2.form_data);
+      }).then(function () {
+        window.location.replace(_this2.redirect_url);
+      })["catch"](function (error) {
+        var error_data = get(error, "response.data", null);
+        if (error_data) _this2.error_data = error_data;
+      });
+    }
   }
 });
 
