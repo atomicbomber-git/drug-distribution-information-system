@@ -25,16 +25,13 @@
                    class="uk-form-label"> Waktu Penerimaan
             </label>
 
-            <input
+            <datetime
                 id="waktu_penerimaan"
-                v-model="waktu_penerimaan"
+                :input-class="{'uk-input': true, 'uk-form-danger': get(this.error_data, 'errors.waktu_penerimaan', false)}"
                 placeholder="Waktu Penerimaan"
-                class="uk-input"
-                :class="{
-                    'uk-form-danger': !!this.get(error_data, 'errors.waktu_penerimaan[0]', false)
-                }"
-                type="datetime-local"
-            >
+                type="datetime"
+                v-model="waktu_penerimaan"></datetime>
+
             <span class="uk-text-danger uk-text-small">
                 {{ this.get(error_data, 'errors.waktu_penerimaan[0]', '')}}
             </span>
@@ -104,17 +101,17 @@
 </template>
 
 <script>
-    import InvoicePembelianLine from "./InvoicePenjualanLine";
     import {get, keyBy, pick, toArray} from "lodash";
     import PenerimaanLine from "./PenerimaanLine";
     import moment from "moment";
     import modal from "../modal"
+    import {Datetime} from 'vue-datetime';
 
     export default {
         components: {
             PenerimaanLine,
-            InvoicePembelianLine,
-            Multiselect: require("vue-multiselect").Multiselect
+            Multiselect: require("vue-multiselect").Multiselect,
+            Datetime,
         },
 
         props: {

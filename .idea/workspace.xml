@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fb6f9944-727a-45d8-964b-1170f91ba173" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoicePenjualanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoicePenjualanController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/InvoicePenjualanCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/InvoicePenjualanCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/PenerimaanCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/PenerimaanCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/stock_gabungan/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/stock_gabungan/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +278,7 @@
       <workItem from="1583407174062" duration="129000" />
       <workItem from="1584187704655" duration="7183000" />
       <workItem from="1584237317177" duration="29774000" />
-      <workItem from="1584319406027" duration="3149000" />
+      <workItem from="1584319406027" duration="3891000" />
     </task>
     <servers />
   </component>
@@ -374,11 +375,11 @@
     </state>
     <state x="323" y="12" key="SettingsEditor/0.0.1366.742@0.0.1366.742" timestamp="1582466876205" />
     <state x="454" y="159" key="SettingsEditor/0.0.1920.1053@0.0.1920.1053" timestamp="1584321883691" />
-    <state x="679" y="260" width="660" height="540" key="StructurePopup" timestamp="1584322026632">
+    <state x="679" y="260" width="660" height="540" key="StructurePopup" timestamp="1584323115412">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="483" y="183" width="810" height="381" key="StructurePopup/0.0.1366.742@0.0.1366.742" timestamp="1582527514731" />
-    <state x="679" y="260" width="660" height="540" key="StructurePopup/0.0.1920.1053@0.0.1920.1053" timestamp="1584322026632" />
+    <state x="679" y="260" width="660" height="540" key="StructurePopup/0.0.1920.1053@0.0.1920.1053" timestamp="1584323115412" />
     <state x="619" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1584237320107">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
@@ -392,10 +393,10 @@
     </state>
     <state x="437" y="169" key="run.anything.popup/0.0.1366.742@0.0.1366.742" timestamp="1582527360542" />
     <state x="614" y="240" width="672" height="680" key="run.anything.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1584288149603" />
-    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1584322638373">
+    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1584323291717">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="436" y="163" width="672" height="478" key="search.everywhere.popup/0.0.1366.742@0.0.1366.742" timestamp="1582468709653" />
-    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1584322638373" />
+    <state x="613" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1584323291717" />
   </component>
 </project>

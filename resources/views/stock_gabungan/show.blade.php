@@ -3,7 +3,7 @@
 @section("content")
     <h1 class="uk-text-bolder">
         <i class="fas fa-pills"></i>
-        Detail Stock "{{ $obat->nama }}}"
+        Detail Stock "{{ $obat->nama }}"
     </h1>
 
     @include('layouts._messages')

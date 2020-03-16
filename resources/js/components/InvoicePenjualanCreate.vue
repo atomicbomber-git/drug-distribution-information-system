@@ -28,7 +28,7 @@
             <datetime
                 id="waktu_penjualan"
                 :input-class="{'uk-input': true, 'uk-form-danger': get(this.error_data, 'errors.waktu_penjualan', false)}"
-                placeholder="Waktu Mulai"
+                placeholder="Waktu Penerimaan"
                 type="datetime"
                 v-model="waktu_penjualan"></datetime>
 
@@ -128,9 +128,6 @@
             obats: Array,
             submit_url: String,
             redirect_url: String,
-        },
-
-        mounted() {
         },
 
         data() {

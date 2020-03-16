@@ -2052,7 +2052,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     submit_url: String,
     redirect_url: String
   },
-  mounted: function mounted() {},
   data: function data() {
     return {
       nama_customer: null,
@@ -2258,22 +2257,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _InvoicePenjualanLine__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InvoicePenjualanLine */ "./resources/js/components/InvoicePenjualanLine.vue");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _PenerimaanLine__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PenerimaanLine */ "./resources/js/components/PenerimaanLine.vue");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modal */ "./resources/js/modal.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _PenerimaanLine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PenerimaanLine */ "./resources/js/components/PenerimaanLine.vue");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modal */ "./resources/js/modal.js");
+/* harmony import */ var vue_datetime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-datetime */ "./node_modules/vue-datetime/dist/vue-datetime.js");
+/* harmony import */ var vue_datetime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_datetime__WEBPACK_IMPORTED_MODULE_4__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
-//
 //
 //
 //
@@ -2383,9 +2380,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    PenerimaanLine: _PenerimaanLine__WEBPACK_IMPORTED_MODULE_2__["default"],
-    InvoicePembelianLine: _InvoicePenjualanLine__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Multiselect: __webpack_require__(/*! vue-multiselect */ "./node_modules/vue-multiselect/dist/vue-multiselect.min.js").Multiselect
+    PenerimaanLine: _PenerimaanLine__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Multiselect: __webpack_require__(/*! vue-multiselect */ "./node_modules/vue-multiselect/dist/vue-multiselect.min.js").Multiselect,
+    Datetime: vue_datetime__WEBPACK_IMPORTED_MODULE_4__["Datetime"]
   },
   props: {
     obats: Array,
@@ -2432,7 +2429,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }, 0);
     },
     d_picked_obats: function d_picked_obats() {
-      return Object(lodash__WEBPACK_IMPORTED_MODULE_1__["keyBy"])(this.d_obats.filter(function (_ref2) {
+      return Object(lodash__WEBPACK_IMPORTED_MODULE_0__["keyBy"])(this.d_obats.filter(function (_ref2) {
         var picked = _ref2.picked;
         return picked;
       }), "id");
@@ -2440,12 +2437,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     form_data: function form_data() {
       return {
         nama_supplier: this.nama_supplier,
-        waktu_penerimaan: moment__WEBPACK_IMPORTED_MODULE_3___default()(this.waktu_penerimaan).format("YYYY-MM-DD HH:mm:ss"),
-        item_penerimaans: Object(lodash__WEBPACK_IMPORTED_MODULE_1__["toArray"])(this.d_picked_obats).map(function (obat) {
-          return Object(lodash__WEBPACK_IMPORTED_MODULE_1__["pick"])(obat, ["id", "jumlah_obat", "harga_satuan_obat", "tanggal_kadaluarsa"]);
+        waktu_penerimaan: moment__WEBPACK_IMPORTED_MODULE_2___default()(this.waktu_penerimaan).format("YYYY-MM-DD HH:mm:ss"),
+        item_penerimaans: Object(lodash__WEBPACK_IMPORTED_MODULE_0__["toArray"])(this.d_picked_obats).map(function (obat) {
+          return Object(lodash__WEBPACK_IMPORTED_MODULE_0__["pick"])(obat, ["id", "jumlah_obat", "harga_satuan_obat", "tanggal_kadaluarsa"]);
         }).map(function (obat) {
           return _objectSpread({}, obat, {
-            tanggal_kadaluarsa: moment__WEBPACK_IMPORTED_MODULE_3___default()(obat.tanggal_kadaluarsa).format("YYYY-MM-DD")
+            tanggal_kadaluarsa: moment__WEBPACK_IMPORTED_MODULE_2___default()(obat.tanggal_kadaluarsa).format("YYYY-MM-DD")
           });
         })
       };
@@ -2455,13 +2452,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     onFormSubmit: function onFormSubmit() {
       var _this2 = this;
 
-      _modal__WEBPACK_IMPORTED_MODULE_4__["default"].confirmationModal().then(function (result) {
+      _modal__WEBPACK_IMPORTED_MODULE_3__["default"].confirmationModal().then(function (result) {
         if (!result.value) throw new Error();
         return axios.post(_this2.submit_url, _this2.form_data);
       }).then(function () {
         window.location.replace(_this2.redirect_url);
       })["catch"](function (error) {
-        var error_data = Object(lodash__WEBPACK_IMPORTED_MODULE_1__["get"])(error, "response.data", null);
+        var error_data = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["get"])(error, "response.data", null);
         if (error_data) _this2.error_data = error_data;
       });
     }
@@ -91347,7 +91344,7 @@ var render = function() {
                   false
                 )
               },
-              placeholder: "Waktu Mulai",
+              placeholder: "Waktu Penerimaan",
               type: "datetime"
             },
             model: {
@@ -91803,56 +91800,54 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "uk-margin" }, [
-        _c(
-          "label",
-          { staticClass: "uk-form-label", attrs: { for: "waktu_penerimaan" } },
-          [_vm._v(" Waktu Penerimaan\n        ")]
-        ),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
+      _c(
+        "div",
+        { staticClass: "uk-margin" },
+        [
+          _c(
+            "label",
             {
-              name: "model",
-              rawName: "v-model",
+              staticClass: "uk-form-label",
+              attrs: { for: "waktu_penerimaan" }
+            },
+            [_vm._v(" Waktu Penerimaan\n        ")]
+          ),
+          _vm._v(" "),
+          _c("datetime", {
+            attrs: {
+              id: "waktu_penerimaan",
+              "input-class": {
+                "uk-input": true,
+                "uk-form-danger": _vm.get(
+                  this.error_data,
+                  "errors.waktu_penerimaan",
+                  false
+                )
+              },
+              placeholder: "Waktu Penerimaan",
+              type: "datetime"
+            },
+            model: {
               value: _vm.waktu_penerimaan,
+              callback: function($$v) {
+                _vm.waktu_penerimaan = $$v
+              },
               expression: "waktu_penerimaan"
             }
-          ],
-          staticClass: "uk-input",
-          class: {
-            "uk-form-danger": !!this.get(
-              _vm.error_data,
-              "errors.waktu_penerimaan[0]",
-              false
+          }),
+          _vm._v(" "),
+          _c("span", { staticClass: "uk-text-danger uk-text-small" }, [
+            _vm._v(
+              "\n            " +
+                _vm._s(
+                  this.get(_vm.error_data, "errors.waktu_penerimaan[0]", "")
+                ) +
+                "\n        "
             )
-          },
-          attrs: {
-            id: "waktu_penerimaan",
-            placeholder: "Waktu Penerimaan",
-            type: "datetime-local"
-          },
-          domProps: { value: _vm.waktu_penerimaan },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.waktu_penerimaan = $event.target.value
-            }
-          }
-        }),
-        _vm._v(" "),
-        _c("span", { staticClass: "uk-text-danger uk-text-small" }, [
-          _vm._v(
-            "\n            " +
-              _vm._s(
-                this.get(_vm.error_data, "errors.waktu_penerimaan[0]", "")
-              ) +
-              "\n        "
-          )
-        ])
-      ]),
+          ])
+        ],
+        1
+      ),
       _vm._v(" "),
       _c(
         "div",
