@@ -1,13 +1,29 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
 use App\Penerimaan;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Penerimaan::class, function (Faker $faker) {
-    return [
-        "nama_supplier" => $faker->company,
-        "waktu_penerimaan" => now()->subMinutes(rand(0, 36_000)),
-    ];
-});
+class PenerimaanFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Penerimaan::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            "nama_supplier" => $this->faker->company,
+            "waktu_penerimaan" => now()->subMinutes(rand(0, 36_000)),
+        ];
+    }
+}

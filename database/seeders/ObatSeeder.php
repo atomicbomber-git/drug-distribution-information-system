@@ -1,5 +1,8 @@
 <?php
 
+namespace Database\Seeders;
+
+use Database\Factories\ObatFactory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -12,8 +15,12 @@ class ObatSeeder extends Seeder
      */
     public function run()
     {
-        DB::transaction(function () {
-            factory(\App\Obat::class, 100)->create();
-        });
+        DB::beginTransaction();
+
+        ObatFactory::new()
+            ->count(100)
+            ->create();
+
+        DB::commit();
     }
 }

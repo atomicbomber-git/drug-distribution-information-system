@@ -1,31 +1,43 @@
 {
-    "name": "laravel/laravel",
+    "name": "atomicbomber-git/drug-distribution-information-system",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Drug Distribution Information System",
     "keywords": [
-        "framework",
-        "laravel"
+        "drug",
+        "distribution",
+        "information system"
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.4",
         "ext-json": "*",
-        "fideloper/proxy": "^4.0",
+        "ext-intl": "*",
         "jenssegers/date": "^4.0.0-beta",
-        "laravel/framework": "^7.1.3",
-        "laravel/tinker": "^2.2.0",
-        "mbezhanov/faker-provider-collection": "^1.2",
-        "rap2hpoutre/laravel-log-viewer": "^1.4",
-        "yajra/laravel-datatables-oracle": "~9.0"
+        "yajra/laravel-datatables-oracle": "~9.0",
+        "doctrine/dbal": "^3.0",
+        "fideloper/proxy": "^4.2",
+        "fruitcake/laravel-cors": "^2.0",
+        "guzzlehttp/guzzle": "^7.2",
+        "laravel-lang/lang": "~7.0",
+        "laravel/fortify": "^1.4",
+        "laravel/framework": "^8.0",
+        "laravel/tinker": "^2.0",
+        "livewire/livewire": "^2.2"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.2",
-        "facade/ignition": "^2.1.0",
-        "fzaninotto/faker": "^1.9.1",
-        "laravel/ui": "^2.0.1",
-        "mockery/mockery": "^1.0",
-        "nunomaduro/collision": "^4.1.3",
-        "phpunit/phpunit": "^9.0"
+        "barryvdh/laravel-debugbar": "^3.5",
+        "facade/ignition": "^2.3.6",
+        "fakerphp/faker": "^1.9.1",
+        "laracasts/cypress": "^1.1",
+        "laravel/sail": "^1.3",
+        "laravel/ui": "^3.1",
+        "maatwebsite/excel": "^3.1",
+        "mbezhanov/faker-provider-collection": "^2.0",
+        "mockery/mockery": "^1.3.1",
+        "nunomaduro/collision": "^5.0",
+        "pestphp/pest": "^0.3.17",
+        "pestphp/pest-plugin-laravel": "^0.3.0",
+        "phpunit/phpunit": "^9.3",
+        "spatie/laravel-ray": "^1.13"
     },
     "config": {
         "optimize-autoloader": true,
@@ -39,12 +51,10 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
-        },
-        "classmap": [
-            "database/seeds",
-            "database/factories"
-        ]
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
     },
     "autoload-dev": {
         "psr-4": {

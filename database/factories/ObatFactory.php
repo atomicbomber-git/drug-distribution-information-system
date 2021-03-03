@@ -1,13 +1,29 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
 use App\Obat;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Obat::class, function (Faker $faker) {
-    return [
-        "nama" => $faker->unique->medicine,
-        "deskripsi" => $faker->realText(50),
-    ];
-});
+class ObatFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Obat::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            "nama" => $this->faker->unique->medicine,
+            "deskripsi" => $this->faker->realText(50),
+        ];
+    }
+}
